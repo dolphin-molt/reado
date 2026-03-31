@@ -1,0 +1,3436 @@
+{
+  "sources": [
+    {
+      "id": "openai",
+      "name": "OpenAI Blog",
+      "adapter": "rss",
+      "url": "https://openai.com/news/rss.xml",
+      "hours": 24,
+      "topics": [
+        "模型",
+        "Agent",
+        "API",
+        "GPT",
+        "ChatGPT"
+      ],
+      "enabled": true,
+      "category": "AI公司"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:anthropic.com&hl=en&gl=US&ceid=US:en",
+      "hours": 168,
+      "topics": [],
+      "enabled": true,
+      "category": "AI公司",
+      "googleNewsQuery": "site:anthropic.com"
+    },
+    {
+      "id": "google-ai",
+      "name": "Google AI Blog",
+      "adapter": "rss",
+      "url": "https://blog.google/technology/ai/rss/",
+      "hours": 24,
+      "topics": [
+        "Gemini",
+        "AI",
+        "模型"
+      ],
+      "enabled": true,
+      "category": "AI公司"
+    },
+    {
+      "id": "deepmind",
+      "name": "Google DeepMind",
+      "adapter": "rss",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "研究",
+        "AlphaFold"
+      ],
+      "enabled": true,
+      "category": "AI公司"
+    },
+    {
+      "id": "meta-ai",
+      "name": "Meta AI Blog",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:ai.meta.com&hl=en&gl=US&ceid=US:en",
+      "hours": 168,
+      "topics": [
+        "Llama",
+        "AI",
+        "开源"
+      ],
+      "enabled": true,
+      "category": "AI公司",
+      "googleNewsQuery": "site:ai.meta.com"
+    },
+    {
+      "id": "apple-ml",
+      "name": "Apple Machine Learning",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:machinelearning.apple.com&hl=en&gl=US&ceid=US:en",
+      "hours": 168,
+      "topics": [
+        "隐私",
+        "端侧",
+        "研究"
+      ],
+      "enabled": false,
+      "category": "AI公司",
+      "googleNewsQuery": "site:machinelearning.apple.com",
+      "_note": "Apple ML发文频率极低，暂禁用；改用site:过滤"
+    },
+    {
+      "id": "nvidia-ai",
+      "name": "NVIDIA AI Blog",
+      "adapter": "rss",
+      "url": "https://blogs.nvidia.com/blog/category/generative-ai/feed/",
+      "hours": 168,
+      "topics": [
+        "AI",
+        "NVIDIA",
+        "model",
+        "GPU"
+      ],
+      "enabled": true,
+      "category": "AI公司"
+    },
+    {
+      "id": "aws-ml",
+      "name": "AWS Machine Learning Blog",
+      "adapter": "rss",
+      "url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "hours": 48,
+      "topics": [
+        "AWS",
+        "SageMaker",
+        "Bedrock"
+      ],
+      "enabled": true,
+      "category": "开发者"
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:deepseek.com&hl=en&gl=US&ceid=US:en",
+      "hours": 168,
+      "topics": [],
+      "enabled": true,
+      "category": "AI公司",
+      "googleNewsQuery": "site:deepseek.com"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:mistral.ai&hl=en&gl=US&ceid=US:en",
+      "hours": 168,
+      "topics": [],
+      "enabled": true,
+      "category": "AI公司",
+      "googleNewsQuery": "site:mistral.ai"
+    },
+    {
+      "id": "xai",
+      "name": "xAI / Grok",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:x.ai&hl=en&gl=US&ceid=US:en",
+      "hours": 168,
+      "topics": [
+        "Grok",
+        "模型"
+      ],
+      "enabled": true,
+      "category": "AI公司",
+      "googleNewsQuery": "site:x.ai"
+    },
+    {
+      "id": "cohere",
+      "name": "Cohere",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:cohere.com/blog&hl=en&gl=US&ceid=US:en",
+      "hours": 168,
+      "topics": [],
+      "enabled": true,
+      "category": "AI公司",
+      "googleNewsQuery": "site:cohere.com/blog"
+    },
+    {
+      "id": "minimax",
+      "name": "MiniMax",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:minimax.io&hl=en&gl=US&ceid=US:en",
+      "hours": 168,
+      "topics": [
+        "模型",
+        "应用"
+      ],
+      "enabled": false,
+      "category": "AI公司",
+      "googleNewsQuery": "site:minimax.io",
+      "_disabled": "Google News 索引的全是产品落地页，无实质内容"
+    },
+    {
+      "id": "zhipu-ai",
+      "name": "智谱 GLM",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:zhipuai.cn&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "hours": 168,
+      "topics": [
+        "GLM",
+        "模型",
+        "Agent"
+      ],
+      "enabled": false,
+      "category": "AI公司",
+      "googleNewsQuery": "site:zhipuai.cn",
+      "_disabled": "仅返回产品首页，无实质内容"
+    },
+    {
+      "id": "moonshot",
+      "name": "Moonshot / Kimi",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:moonshot.cn&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "hours": 168,
+      "topics": [
+        "Kimi",
+        "模型"
+      ],
+      "enabled": false,
+      "category": "AI公司",
+      "googleNewsQuery": "site:moonshot.cn",
+      "_disabled": "仅返回 Kimi API 平台页，无实质内容"
+    },
+    {
+      "id": "bytedance-ai",
+      "name": "字节 Seed",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:seed.bytedance.com&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "hours": 2160,
+      "topics": [],
+      "enabled": true,
+      "category": "AI公司",
+      "googleNewsQuery": "site:seed.bytedance.com",
+      "_note": "team.doubao.com未被Google News收录，改用字节Seed官网"
+    },
+    {
+      "id": "alibaba-ai",
+      "name": "阿里 / 通义千问",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:qwenlm.github.io&hl=en&gl=US&ceid=US:en",
+      "hours": 168,
+      "topics": [
+        "通义",
+        "Qwen",
+        "模型"
+      ],
+      "enabled": true,
+      "category": "AI公司",
+      "googleNewsQuery": "site:qwenlm.github.io"
+    },
+    {
+      "id": "tencent-ai",
+      "name": "腾讯混元 / 元宝",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:hunyuan.tencent.com&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "hours": 168,
+      "topics": [
+        "混元",
+        "元宝"
+      ],
+      "enabled": false,
+      "category": "AI公司",
+      "googleNewsQuery": "site:hunyuan.tencent.com",
+      "_disabled": "仅返回产品落地页（3D、视频工具首页），无实质内容"
+    },
+    {
+      "id": "baidu-ai",
+      "name": "百度 / 文心",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:wenxin.baidu.com&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "hours": 168,
+      "topics": [
+        "文心",
+        "模型"
+      ],
+      "enabled": false,
+      "category": "AI公司",
+      "googleNewsQuery": "site:wenxin.baidu.com",
+      "_disabled": "仅返回 3 条相同的产品首页，无实质内容"
+    },
+    {
+      "id": "manus-ai",
+      "name": "Manus AI",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:manus.im&hl=en&gl=US&ceid=US:en",
+      "hours": 168,
+      "topics": [
+        "Agent",
+        "自动化"
+      ],
+      "enabled": false,
+      "category": "AI公司",
+      "googleNewsQuery": "site:manus.im",
+      "_disabled": "仅返回登录页/定价页，无实质内容"
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity AI",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:perplexity.ai&hl=en&gl=US&ceid=US:en",
+      "hours": 168,
+      "topics": [
+        "搜索",
+        "AI产品"
+      ],
+      "enabled": false,
+      "category": "AI公司",
+      "googleNewsQuery": "site:perplexity.ai",
+      "_disabled": "绝大多数为搜索/应用页，/blog 子路径未被 Google News 收录"
+    },
+    {
+      "id": "stepfun",
+      "name": "阶跃星辰",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:stepfun.com&hl=en&gl=US&ceid=US:en",
+      "hours": 168,
+      "topics": [
+        "模型",
+        "应用"
+      ],
+      "enabled": false,
+      "category": "AI公司",
+      "googleNewsQuery": "site:stepfun.com",
+      "_disabled": "仅 7 条，大多数为平台/演示页，内容稀少"
+    },
+    {
+      "id": "techcrunch-ai",
+      "name": "TechCrunch AI",
+      "adapter": "rss",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "创业",
+        "融资"
+      ],
+      "enabled": true,
+      "category": "科技媒体"
+    },
+    {
+      "id": "techcrunch-startups",
+      "name": "TechCrunch Startups",
+      "adapter": "rss",
+      "url": "https://techcrunch.com/category/startups/feed/",
+      "hours": 24,
+      "topics": [
+        "创业",
+        "融资",
+        "VC"
+      ],
+      "enabled": false,
+      "category": "科技媒体"
+    },
+    {
+      "id": "techcrunch-security",
+      "name": "TechCrunch Security",
+      "adapter": "rss",
+      "url": "https://techcrunch.com/category/security/feed/",
+      "hours": 24,
+      "topics": [
+        "安全",
+        "漏洞",
+        "隐私"
+      ],
+      "enabled": false,
+      "category": "科技媒体"
+    },
+    {
+      "id": "techcrunch-venture",
+      "name": "TechCrunch Venture",
+      "adapter": "rss",
+      "url": "https://techcrunch.com/category/venture/feed/",
+      "hours": 24,
+      "topics": [
+        "融资",
+        "VC",
+        "投资"
+      ],
+      "enabled": false,
+      "category": "创投"
+    },
+    {
+      "id": "the-verge-ai",
+      "name": "The Verge AI",
+      "adapter": "rss",
+      "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "产品",
+        "消费科技"
+      ],
+      "enabled": true,
+      "category": "科技媒体"
+    },
+    {
+      "id": "the-verge-tech",
+      "name": "The Verge Tech",
+      "adapter": "rss",
+      "url": "https://www.theverge.com/rss/index.xml",
+      "hours": 24,
+      "topics": [
+        "科技",
+        "产品",
+        "评测"
+      ],
+      "enabled": false,
+      "category": "科技媒体"
+    },
+    {
+      "id": "the-verge-science",
+      "name": "The Verge Science",
+      "adapter": "rss",
+      "url": "https://www.theverge.com/rss/science/index.xml",
+      "hours": 48,
+      "topics": [
+        "科学",
+        "太空",
+        "气候"
+      ],
+      "enabled": false,
+      "category": "科技媒体"
+    },
+    {
+      "id": "the-verge-policy",
+      "name": "The Verge Policy",
+      "adapter": "rss",
+      "url": "https://www.theverge.com/rss/policy/index.xml",
+      "hours": 48,
+      "topics": [
+        "政策",
+        "监管",
+        "法规"
+      ],
+      "enabled": false,
+      "category": "科技媒体"
+    },
+    {
+      "id": "the-verge-games",
+      "name": "The Verge Games",
+      "adapter": "rss",
+      "url": "https://www.theverge.com/rss/games/index.xml",
+      "hours": 48,
+      "topics": [
+        "游戏",
+        "主机",
+        "电竞"
+      ],
+      "enabled": false,
+      "category": "科技媒体"
+    },
+    {
+      "id": "mit-tech-review",
+      "name": "MIT Technology Review AI",
+      "adapter": "rss",
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+      "hours": 48,
+      "topics": [
+        "AI",
+        "政策",
+        "研究"
+      ],
+      "enabled": true,
+      "category": "科技媒体"
+    },
+    {
+      "id": "wired-ai",
+      "name": "Wired AI",
+      "adapter": "rss",
+      "url": "https://www.wired.com/feed/tag/ai/latest/rss",
+      "hours": 48,
+      "topics": [
+        "AI",
+        "文化",
+        "政策"
+      ],
+      "enabled": true,
+      "category": "科技媒体"
+    },
+    {
+      "id": "the-decoder",
+      "name": "The Decoder",
+      "adapter": "rss",
+      "url": "https://the-decoder.com/feed/",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "模型",
+        "产品"
+      ],
+      "enabled": true,
+      "category": "科技媒体"
+    },
+    {
+      "id": "ars-technica",
+      "name": "Ars Technica",
+      "adapter": "rss",
+      "url": "https://feeds.arstechnica.com/arstechnica/index",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "技术",
+        "科技"
+      ],
+      "enabled": true,
+      "category": "科技媒体"
+    },
+    {
+      "id": "bbc-tech",
+      "name": "BBC Technology",
+      "adapter": "rss",
+      "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "科技"
+      ],
+      "enabled": true,
+      "category": "科技媒体"
+    },
+    {
+      "id": "qbitai",
+      "name": "量子位",
+      "adapter": "rss",
+      "url": "https://www.qbitai.com/feed",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "模型",
+        "产品"
+      ],
+      "enabled": true,
+      "category": "科技媒体"
+    },
+    {
+      "id": "36kr",
+      "name": "36氪",
+      "adapter": "rss",
+      "url": "https://36kr.com/feed",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "人工智能",
+        "大模型",
+        "模型",
+        "LLM",
+        "AGI",
+        "智能体",
+        "Agent",
+        "机器学习",
+        "深度学习",
+        "神经网络",
+        "Transformer",
+        "推理",
+        "训练",
+        "向量",
+        "RAG",
+        "微调",
+        "fine-tuning",
+        "预训练",
+        "GPT",
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "Llama",
+        "Mistral",
+        "Grok",
+        "Copilot",
+        "Sora",
+        "DALL-E",
+        "Midjourney",
+        "Stable Diffusion",
+        "豆包",
+        "通义",
+        "文心",
+        "混元",
+        "讯飞",
+        "Kimi",
+        "智谱",
+        "DeepSeek",
+        "Qwen",
+        "百川",
+        "月之暗面",
+        "阶跃星辰",
+        "MiniMax",
+        "零一万物",
+        "OpenAI",
+        "Anthropic",
+        "Google DeepMind",
+        "Meta AI",
+        "xAI",
+        "阿里",
+        "字节",
+        "百度",
+        "腾讯",
+        "华为",
+        "科大讯飞",
+        "自动驾驶",
+        "具身智能",
+        "机器人",
+        "多模态",
+        "语音识别",
+        "图像生成",
+        "代码生成",
+        "AI 编程",
+        "AI助手",
+        "AI原生"
+      ],
+      "enabled": true,
+      "category": "科技媒体",
+      "searchable": true,
+      "searchCommand": [
+        "36kr",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "geekpark",
+      "name": "极客公园",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:geekpark.net&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "hours": 168,
+      "topics": [
+        "AI",
+        "人工智能",
+        "大模型",
+        "模型",
+        "LLM",
+        "AGI",
+        "智能体",
+        "Agent",
+        "机器学习",
+        "深度学习",
+        "神经网络",
+        "Transformer",
+        "推理",
+        "训练",
+        "向量",
+        "RAG",
+        "微调",
+        "fine-tuning",
+        "预训练",
+        "GPT",
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "Llama",
+        "Mistral",
+        "Grok",
+        "Copilot",
+        "Sora",
+        "DALL-E",
+        "Midjourney",
+        "Stable Diffusion",
+        "豆包",
+        "通义",
+        "文心",
+        "混元",
+        "讯飞",
+        "Kimi",
+        "智谱",
+        "DeepSeek",
+        "Qwen",
+        "百川",
+        "月之暗面",
+        "阶跃星辰",
+        "MiniMax",
+        "零一万物",
+        "OpenAI",
+        "Anthropic",
+        "Google DeepMind",
+        "Meta AI",
+        "xAI",
+        "阿里",
+        "字节",
+        "百度",
+        "腾讯",
+        "华为",
+        "科大讯飞",
+        "自动驾驶",
+        "具身智能",
+        "机器人",
+        "多模态",
+        "语音识别",
+        "图像生成",
+        "代码生成",
+        "AI 编程",
+        "AI助手",
+        "AI原生"
+      ],
+      "enabled": true,
+      "category": "科技媒体",
+      "googleNewsQuery": "site:geekpark.net",
+      "_note": "极客公园官方RSS超时，改用Google News site:过滤"
+    },
+    {
+      "id": "sspai",
+      "name": "少数派",
+      "adapter": "rss",
+      "url": "https://sspai.com/feed",
+      "hours": 48,
+      "topics": [
+        "效率",
+        "工具",
+        "AI"
+      ],
+      "enabled": true,
+      "category": "科技媒体"
+    },
+    {
+      "id": "aibase",
+      "name": "AIBase",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:aibase.com&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "hours": 168,
+      "topics": [
+        "AI",
+        "模型",
+        "行业"
+      ],
+      "enabled": true,
+      "category": "科技媒体",
+      "googleNewsQuery": "site:aibase.com",
+      "_note": "AIBase.com AI工具库 via Google News"
+    },
+    {
+      "id": "xinzhiyuan",
+      "name": "新智元",
+      "adapter": "wordpress",
+      "url": "https://aiera.com.cn",
+      "hours": 24,
+      "topics": [],
+      "enabled": true,
+      "category": "科技媒体"
+    },
+    {
+      "id": "tmtpost",
+      "name": "钛媒体",
+      "adapter": "rss",
+      "url": "https://www.tmtpost.com/feed",
+      "hours": 48,
+      "topics": [
+        "AI",
+        "人工智能",
+        "大模型",
+        "模型",
+        "LLM",
+        "AGI",
+        "智能体",
+        "Agent",
+        "机器学习",
+        "深度学习",
+        "神经网络",
+        "Transformer",
+        "推理",
+        "训练",
+        "向量",
+        "RAG",
+        "微调",
+        "fine-tuning",
+        "预训练",
+        "GPT",
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "Llama",
+        "Mistral",
+        "Grok",
+        "Copilot",
+        "Sora",
+        "DALL-E",
+        "Midjourney",
+        "Stable Diffusion",
+        "豆包",
+        "通义",
+        "文心",
+        "混元",
+        "讯飞",
+        "Kimi",
+        "智谱",
+        "DeepSeek",
+        "Qwen",
+        "百川",
+        "月之暗面",
+        "阶跃星辰",
+        "MiniMax",
+        "零一万物",
+        "OpenAI",
+        "Anthropic",
+        "Google DeepMind",
+        "Meta AI",
+        "xAI",
+        "阿里",
+        "字节",
+        "百度",
+        "腾讯",
+        "华为",
+        "科大讯飞",
+        "自动驾驶",
+        "具身智能",
+        "机器人",
+        "多模态",
+        "语音识别",
+        "图像生成",
+        "代码生成",
+        "AI 编程",
+        "AI助手",
+        "AI原生"
+      ],
+      "enabled": true,
+      "category": "科技媒体"
+    },
+    {
+      "id": "leiphone",
+      "name": "雷锋网",
+      "adapter": "rss",
+      "url": "https://www.leiphone.com/feed",
+      "hours": 48,
+      "topics": [
+        "AI",
+        "人工智能",
+        "大模型",
+        "模型",
+        "LLM",
+        "AGI",
+        "智能体",
+        "Agent",
+        "机器学习",
+        "深度学习",
+        "神经网络",
+        "Transformer",
+        "推理",
+        "训练",
+        "向量",
+        "RAG",
+        "微调",
+        "fine-tuning",
+        "预训练",
+        "GPT",
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "Llama",
+        "Mistral",
+        "Grok",
+        "Copilot",
+        "Sora",
+        "DALL-E",
+        "Midjourney",
+        "Stable Diffusion",
+        "豆包",
+        "通义",
+        "文心",
+        "混元",
+        "讯飞",
+        "Kimi",
+        "智谱",
+        "DeepSeek",
+        "Qwen",
+        "百川",
+        "月之暗面",
+        "阶跃星辰",
+        "MiniMax",
+        "零一万物",
+        "OpenAI",
+        "Anthropic",
+        "Google DeepMind",
+        "Meta AI",
+        "xAI",
+        "阿里",
+        "字节",
+        "百度",
+        "腾讯",
+        "华为",
+        "科大讯飞",
+        "自动驾驶",
+        "具身智能",
+        "机器人",
+        "多模态",
+        "语音识别",
+        "图像生成",
+        "代码生成",
+        "AI 编程",
+        "AI助手",
+        "AI原生"
+      ],
+      "enabled": true,
+      "category": "科技媒体"
+    },
+    {
+      "id": "huxiu",
+      "name": "虎嗅",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:huxiu.com+AI&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+      "hours": 48,
+      "topics": [],
+      "enabled": true,
+      "category": "科技媒体",
+      "googleNewsQuery": "site:huxiu.com AI"
+    },
+    {
+      "id": "techmeme",
+      "name": "TechMeme",
+      "adapter": "rss",
+      "url": "https://www.techmeme.com/feed.xml",
+      "hours": 24,
+      "topics": [],
+      "enabled": true,
+      "category": "科技媒体",
+      "_note": "编辑精选科技头条聚合，信噪比极高"
+    },
+    {
+      "id": "36kr-en",
+      "name": "36Kr English",
+      "adapter": "rss",
+      "url": "https://news.google.com/rss/search?q=site:36kr.com/en&hl=en-US&gl=US&ceid=US:en",
+      "hours": 48,
+      "topics": [],
+      "enabled": true,
+      "category": "科技媒体",
+      "googleNewsQuery": "site:36kr.com/en",
+      "_note": "36氪英文版，亚洲创业生态"
+    },
+    {
+      "id": "a16z-blog",
+      "name": "a16z Blog",
+      "adapter": "rss",
+      "url": "https://www.a16z.news/feed",
+      "hours": 168,
+      "topics": [],
+      "enabled": true,
+      "category": "创投",
+      "_note": "Andreessen Horowitz 官方博客"
+    },
+    {
+      "id": "yc-blog",
+      "name": "Y Combinator Blog",
+      "adapter": "rss",
+      "url": "https://www.ycombinator.com/blog/rss.xml",
+      "hours": 168,
+      "topics": [],
+      "enabled": true,
+      "category": "创投"
+    },
+    {
+      "id": "ai-now",
+      "name": "AI Now Institute",
+      "adapter": "rss",
+      "url": "https://ainowinstitute.org/feed",
+      "hours": 336,
+      "topics": [],
+      "enabled": true,
+      "category": "学术",
+      "_note": "AI 政策与社会影响，纽约大学研究机构"
+    },
+    {
+      "id": "stratechery",
+      "name": "Stratechery",
+      "adapter": "rss",
+      "url": "https://stratechery.com/feed/",
+      "hours": 168,
+      "topics": [],
+      "enabled": true,
+      "category": "开发者",
+      "_note": "Ben Thompson 科技商业战略分析，部分付费"
+    },
+    {
+      "id": "lenny-newsletter",
+      "name": "Lenny's Newsletter",
+      "adapter": "rss",
+      "url": "https://www.lennysnewsletter.com/feed",
+      "hours": 168,
+      "topics": [
+        "AI",
+        "人工智能",
+        "大模型",
+        "模型",
+        "LLM",
+        "AGI",
+        "智能体",
+        "Agent",
+        "机器学习",
+        "深度学习",
+        "神经网络",
+        "Transformer",
+        "推理",
+        "训练",
+        "向量",
+        "RAG",
+        "微调",
+        "fine-tuning",
+        "预训练",
+        "GPT",
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "Llama",
+        "Mistral",
+        "Grok",
+        "Copilot",
+        "Sora",
+        "DALL-E",
+        "Midjourney",
+        "Stable Diffusion",
+        "豆包",
+        "通义",
+        "文心",
+        "混元",
+        "讯飞",
+        "Kimi",
+        "智谱",
+        "DeepSeek",
+        "Qwen",
+        "百川",
+        "月之暗面",
+        "阶跃星辰",
+        "MiniMax",
+        "零一万物",
+        "OpenAI",
+        "Anthropic",
+        "Google DeepMind",
+        "Meta AI",
+        "xAI",
+        "阿里",
+        "字节",
+        "百度",
+        "腾讯",
+        "华为",
+        "科大讯飞",
+        "自动驾驶",
+        "具身智能",
+        "机器人",
+        "多模态",
+        "语音识别",
+        "图像生成",
+        "代码生成",
+        "AI 编程",
+        "AI助手",
+        "AI原生"
+      ],
+      "enabled": true,
+      "category": "开发者",
+      "_note": "产品/增长/AI 工具使用"
+    },
+    {
+      "id": "hackernews",
+      "name": "Hacker News Top",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "技术",
+        "创业"
+      ],
+      "enabled": true,
+      "category": "社区",
+      "command": [
+        "hackernews",
+        "top",
+        "--limit",
+        "25"
+      ],
+      "searchable": true,
+      "searchCommand": [
+        "hackernews",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "hackernews-best",
+      "name": "Hacker News Best",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 48,
+      "topics": [
+        "AI",
+        "技术"
+      ],
+      "enabled": true,
+      "category": "社区",
+      "command": [
+        "hackernews",
+        "best",
+        "--limit",
+        "20"
+      ],
+      "searchable": false
+    },
+    {
+      "id": "reddit-locallama",
+      "name": "Reddit LocalLLaMA",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "LLM",
+        "开源",
+        "本地部署"
+      ],
+      "enabled": true,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "LocalLLaMA",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "LocalLLaMA",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-ml",
+      "name": "Reddit MachineLearning",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "ML",
+        "AI",
+        "研究"
+      ],
+      "enabled": true,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "MachineLearning",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "MachineLearning",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-ainews",
+      "name": "Reddit AI News",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "新闻",
+        "热点"
+      ],
+      "enabled": true,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "AINews",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "AINews",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-singularity",
+      "name": "Reddit Singularity",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "AGI",
+        "AI",
+        "未来"
+      ],
+      "enabled": true,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "singularity",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "singularity",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-programming",
+      "name": "Reddit Programming",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "编程",
+        "开发",
+        "技术"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "programming",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "programming",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-golang",
+      "name": "Reddit Go",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 48,
+      "topics": [
+        "Go",
+        "编程",
+        "后端"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "golang",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "golang",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-rust",
+      "name": "Reddit Rust",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 48,
+      "topics": [
+        "Rust",
+        "编程",
+        "系统"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "rust",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "rust",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-python",
+      "name": "Reddit Python",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 48,
+      "topics": [
+        "Python",
+        "编程",
+        "数据"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "Python",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "Python",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-webdev",
+      "name": "Reddit Web Dev",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 48,
+      "topics": [
+        "Web",
+        "前端",
+        "全栈"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "webdev",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "webdev",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-datascience",
+      "name": "Reddit Data Science",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "数据科学",
+        "分析",
+        "可视化"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "datascience",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "datascience",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-netsec",
+      "name": "Reddit NetSec",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "安全",
+        "漏洞",
+        "渗透"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "netsec",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "netsec",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-technology",
+      "name": "Reddit Technology",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "科技",
+        "互联网",
+        "社会"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "technology",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "technology",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-futurology",
+      "name": "Reddit Futurology",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "未来",
+        "技术趋势",
+        "科学"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "Futurology",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "Futurology",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-science",
+      "name": "Reddit Science",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "科学",
+        "研究",
+        "自然"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "science",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "science",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-economics",
+      "name": "Reddit Economics",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "经济",
+        "宏观",
+        "政策"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "Economics",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "Economics",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-finance",
+      "name": "Reddit Personal Finance",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "理财",
+        "投资",
+        "金融"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "personalfinance",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "personalfinance",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-investing",
+      "name": "Reddit Investing",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "投资",
+        "股票",
+        "金融"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "investing",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "investing",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-worldnews",
+      "name": "Reddit World News",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 12,
+      "topics": [
+        "国际",
+        "新闻",
+        "政治"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "worldnews",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "worldnews",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "reddit-crypto",
+      "name": "Reddit CryptoCurrency",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 12,
+      "topics": [
+        "加密货币",
+        "Web3",
+        "区块链"
+      ],
+      "enabled": false,
+      "category": "Reddit",
+      "command": [
+        "reddit",
+        "hot",
+        "--subreddit",
+        "CryptoCurrency",
+        "--limit",
+        "20"
+      ],
+      "strategy": "api",
+      "searchable": true,
+      "searchCommand": [
+        "reddit",
+        "search",
+        "{keyword}",
+        "--subreddit",
+        "CryptoCurrency",
+        "--limit",
+        "15"
+      ]
+    },
+    {
+      "id": "v2ex",
+      "name": "V2EX 热门",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": true,
+      "category": "社区",
+      "command": [
+        "v2ex",
+        "hot",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "lobsters",
+      "name": "Lobste.rs",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "技术",
+        "编程"
+      ],
+      "enabled": true,
+      "category": "社区",
+      "command": [
+        "lobsters",
+        "hot",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "devto",
+      "name": "DEV.to",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "开发",
+        "教程"
+      ],
+      "enabled": true,
+      "category": "社区",
+      "command": [
+        "devto",
+        "top",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "producthunt",
+      "name": "Product Hunt",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": true,
+      "category": "产品发现",
+      "command": [
+        "producthunt",
+        "today",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "github-trending",
+      "name": "GitHub Trending",
+      "adapter": "github-trending",
+      "url": "https://github.com/trending",
+      "hours": 24,
+      "topics": [],
+      "enabled": true,
+      "category": "GitHub"
+    },
+    {
+      "id": "github-trending-python",
+      "name": "GitHub Trending (Python)",
+      "adapter": "github-trending",
+      "url": "https://github.com/trending/python",
+      "hours": 24,
+      "topics": [
+        "Python",
+        "AI",
+        "开源"
+      ],
+      "enabled": true,
+      "category": "GitHub"
+    },
+    {
+      "id": "arxiv-cs-ai",
+      "name": "arXiv cs.AI",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/cs.AI",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "agent",
+        "reasoning",
+        "planning",
+        "knowledge"
+      ],
+      "enabled": true,
+      "category": "学术",
+      "searchable": true,
+      "searchCommand": [
+        "arxiv",
+        "search",
+        "{keyword}",
+        "--limit",
+        "10"
+      ]
+    },
+    {
+      "id": "arxiv-cs-lg",
+      "name": "arXiv cs.LG (机器学习)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/cs.LG",
+      "hours": 24,
+      "topics": [
+        "machine learning",
+        "deep learning",
+        "neural network",
+        "training"
+      ],
+      "enabled": true,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "arxiv-cs-cl",
+      "name": "arXiv cs.CL (自然语言处理)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/cs.CL",
+      "hours": 24,
+      "topics": [
+        "language",
+        "NLP",
+        "translation",
+        "summarization",
+        "LLM"
+      ],
+      "enabled": true,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "arxiv-cs-cv",
+      "name": "arXiv cs.CV (计算机视觉)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/cs.CV",
+      "hours": 24,
+      "topics": [
+        "vision",
+        "image",
+        "visual",
+        "multimodal",
+        "detection"
+      ],
+      "enabled": true,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "arxiv-cs-ro",
+      "name": "arXiv cs.RO (机器人学)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/cs.RO",
+      "hours": 48,
+      "topics": [
+        "机器人",
+        "自动化",
+        "强化学习"
+      ],
+      "enabled": false,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "arxiv-cs-se",
+      "name": "arXiv cs.SE (软件工程)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/cs.SE",
+      "hours": 48,
+      "topics": [
+        "软件工程",
+        "代码",
+        "测试"
+      ],
+      "enabled": false,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "arxiv-cs-cr",
+      "name": "arXiv cs.CR (密码与安全)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/cs.CR",
+      "hours": 48,
+      "topics": [
+        "安全",
+        "密码学",
+        "隐私"
+      ],
+      "enabled": false,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "arxiv-cs-ne",
+      "name": "arXiv cs.NE (神经与进化计算)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/cs.NE",
+      "hours": 48,
+      "topics": [
+        "神经网络",
+        "进化算法",
+        "计算神经"
+      ],
+      "enabled": false,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "arxiv-cs-sy",
+      "name": "arXiv cs.SY (系统与控制)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/cs.SY",
+      "hours": 48,
+      "topics": [
+        "控制系统",
+        "自动化",
+        "优化"
+      ],
+      "enabled": false,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "arxiv-cs-hc",
+      "name": "arXiv cs.HC (人机交互)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/cs.HC",
+      "hours": 48,
+      "topics": [
+        "HCI",
+        "用户体验",
+        "交互"
+      ],
+      "enabled": false,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "arxiv-stat-ml",
+      "name": "arXiv stat.ML (统计机器学习)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/stat.ML",
+      "hours": 48,
+      "topics": [
+        "统计学习",
+        "贝叶斯",
+        "概率模型"
+      ],
+      "enabled": false,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "arxiv-econ-gn",
+      "name": "arXiv econ.GN (经济学)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/econ.GN",
+      "hours": 72,
+      "topics": [
+        "经济学",
+        "计量",
+        "劳动市场"
+      ],
+      "enabled": false,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "arxiv-q-fin",
+      "name": "arXiv q-fin (量化金融)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/q-fin.GN",
+      "hours": 72,
+      "topics": [
+        "量化金融",
+        "风险",
+        "定价"
+      ],
+      "enabled": false,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "arxiv-quant-ph",
+      "name": "arXiv quant-ph (量子物理)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/quant-ph",
+      "hours": 72,
+      "topics": [
+        "量子计算",
+        "量子通信",
+        "物理"
+      ],
+      "enabled": false,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "arxiv-q-bio",
+      "name": "arXiv q-bio (计算生物)",
+      "adapter": "rss",
+      "url": "https://rss.arxiv.org/rss/q-bio.NC",
+      "hours": 72,
+      "topics": [
+        "计算神经科学",
+        "生物信息",
+        "神经编码"
+      ],
+      "enabled": false,
+      "category": "学术",
+      "searchable": false
+    },
+    {
+      "id": "papers-with-code",
+      "name": "Papers With Code",
+      "adapter": "rss",
+      "url": "https://paperswithcode.com/latest.rss",
+      "hours": 48,
+      "topics": [
+        "论文",
+        "代码",
+        "SOTA"
+      ],
+      "enabled": false,
+      "category": "学术",
+      "_note": "Entity expansion limit exceeded，暂禁用"
+    },
+    {
+      "id": "hf-papers",
+      "name": "Hugging Face Daily Papers",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "论文",
+        "每日精选"
+      ],
+      "enabled": true,
+      "category": "学术",
+      "command": [
+        "hf",
+        "top",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "hf-blog",
+      "name": "Hugging Face Blog",
+      "adapter": "rss",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "hours": 168,
+      "topics": [],
+      "enabled": true,
+      "category": "学术"
+    },
+    {
+      "id": "langchain-blog",
+      "name": "LangChain Blog",
+      "adapter": "rss",
+      "url": "https://blog.langchain.dev/rss/",
+      "hours": 168,
+      "topics": [
+        "Agent",
+        "RAG",
+        "LLM开发"
+      ],
+      "enabled": true,
+      "category": "开发者"
+    },
+    {
+      "id": "simon-willison",
+      "name": "Simon Willison's Blog",
+      "adapter": "rss",
+      "url": "https://simonwillison.net/atom/everything/",
+      "hours": 48,
+      "topics": [
+        "AI工具",
+        "LLM",
+        "开发实践"
+      ],
+      "enabled": true,
+      "category": "开发者"
+    },
+    {
+      "id": "lilian-weng",
+      "name": "Lilian Weng's Blog",
+      "adapter": "rss",
+      "url": "https://lilianweng.github.io/index.xml",
+      "hours": 8760,
+      "topics": [],
+      "enabled": true,
+      "category": "开发者",
+      "_note": "发布频率极低（约每季度一篇），需要 1 年窗口才能捕获新文章"
+    },
+    {
+      "id": "ai-snake-oil",
+      "name": "AI Snake Oil",
+      "adapter": "rss",
+      "url": "https://aisnakeoil.substack.com/feed",
+      "hours": 720,
+      "topics": [],
+      "enabled": true,
+      "category": "开发者",
+      "_note": "原域名 aisnakeoil.com/feed 返回空，使用 Substack RSS；发布频率约每月一次，需要 720h 窗口"
+    },
+    {
+      "id": "claude-code-release",
+      "name": "Claude Code Releases",
+      "adapter": "rss",
+      "url": "https://github.com/anthropics/claude-code/releases.atom",
+      "hours": 168,
+      "topics": [],
+      "enabled": true,
+      "category": "GitHub"
+    },
+    {
+      "id": "n8n-release",
+      "name": "n8n Releases",
+      "adapter": "rss",
+      "url": "https://github.com/n8n-io/n8n/releases.atom",
+      "hours": 168,
+      "topics": [],
+      "enabled": true,
+      "category": "GitHub"
+    },
+    {
+      "id": "dify-release",
+      "name": "Dify Releases",
+      "adapter": "rss",
+      "url": "https://github.com/langgenius/dify/releases.atom",
+      "hours": 168,
+      "topics": [],
+      "enabled": true,
+      "category": "GitHub"
+    },
+    {
+      "id": "langchain-release",
+      "name": "LangChain Releases",
+      "adapter": "rss",
+      "url": "https://github.com/langchain-ai/langchain/releases.atom",
+      "hours": 168,
+      "topics": [],
+      "enabled": true,
+      "category": "GitHub"
+    },
+    {
+      "id": "yt-lex-fridman",
+      "name": "Lex Fridman (YouTube)",
+      "adapter": "rss",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCSHZKyawb77ixDdsGog4iWA",
+      "hours": 168,
+      "topics": [
+        "播客",
+        "AI",
+        "访谈"
+      ],
+      "enabled": true,
+      "category": "YouTube"
+    },
+    {
+      "id": "yt-yannic-kilcher",
+      "name": "Yannic Kilcher (YouTube)",
+      "adapter": "rss",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCZHmQk67mSJgfCCTn7xBfew",
+      "hours": 168,
+      "topics": [
+        "论文解读",
+        "AI",
+        "深度学习"
+      ],
+      "enabled": true,
+      "category": "YouTube"
+    },
+    {
+      "id": "yt-two-minute-papers",
+      "name": "Two Minute Papers (YouTube)",
+      "adapter": "rss",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCbfYPyITQ-7l4upoX8nvctg",
+      "hours": 168,
+      "topics": [
+        "论文解读",
+        "AI",
+        "科普"
+      ],
+      "enabled": true,
+      "category": "YouTube"
+    },
+    {
+      "id": "yt-3blue1brown",
+      "name": "3Blue1Brown (YouTube)",
+      "adapter": "rss",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1_uAIS3r8Vu6JjXWvastJg",
+      "hours": 720,
+      "topics": [
+        "数学",
+        "神经网络",
+        "科普"
+      ],
+      "enabled": true,
+      "category": "YouTube"
+    },
+    {
+      "id": "yt-andrej-karpathy",
+      "name": "Andrej Karpathy (YouTube)",
+      "adapter": "rss",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw",
+      "hours": 720,
+      "topics": [
+        "教程",
+        "LLM",
+        "神经网络"
+      ],
+      "enabled": true,
+      "category": "YouTube"
+    },
+    {
+      "id": "zhihu-hot",
+      "name": "知乎热榜",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "技术"
+      ],
+      "enabled": true,
+      "category": "社交媒体",
+      "command": [
+        "zhihu",
+        "hot",
+        "--limit",
+        "20"
+      ],
+      "strategy": "cookie",
+      "searchable": false
+    },
+    {
+      "id": "zhihu-search",
+      "name": "知乎搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "category": "社交媒体",
+      "command": [
+        "zhihu",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "zhihu",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ],
+      "searchable": true,
+      "strategy": "cookie"
+    },
+    {
+      "id": "weibo-hot",
+      "name": "微博热搜",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "热点"
+      ],
+      "enabled": true,
+      "category": "社交媒体",
+      "command": [
+        "weibo",
+        "hot",
+        "--limit",
+        "20"
+      ],
+      "strategy": "cookie",
+      "searchable": false
+    },
+    {
+      "id": "weibo-search",
+      "name": "微博搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "category": "社交媒体",
+      "command": [
+        "weibo",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "weibo",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ],
+      "searchable": true,
+      "strategy": "cookie"
+    },
+    {
+      "id": "bilibili-hot",
+      "name": "B站热门",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "科技"
+      ],
+      "enabled": true,
+      "category": "社交媒体",
+      "command": [
+        "bilibili",
+        "hot",
+        "--limit",
+        "20"
+      ],
+      "strategy": "cookie",
+      "searchable": false
+    },
+    {
+      "id": "bilibili-search",
+      "name": "B站搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "category": "社交媒体",
+      "command": [
+        "bilibili",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "bilibili",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ],
+      "searchable": true,
+      "strategy": "cookie"
+    },
+    {
+      "id": "bilibili-ranking",
+      "name": "B站排行榜",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": true,
+      "category": "社交媒体",
+      "command": [
+        "bilibili",
+        "ranking",
+        "--limit",
+        "20"
+      ],
+      "strategy": "cookie",
+      "searchable": false
+    },
+    {
+      "id": "bluesky-trending",
+      "name": "Bluesky 热门话题",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "技术"
+      ],
+      "enabled": true,
+      "category": "社交媒体",
+      "command": [
+        "bluesky",
+        "trending",
+        "--limit",
+        "20"
+      ],
+      "searchable": true,
+      "searchCommand": [
+        "bluesky",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "instagram-explore",
+      "name": "Instagram Explore",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "category": "社交媒体",
+      "command": [
+        "instagram",
+        "explore",
+        "--limit",
+        "20"
+      ],
+      "_note": "需要登录 Cookie（Strategy: cookie）",
+      "strategy": "cookie"
+    },
+    {
+      "id": "tiktok-explore",
+      "name": "TikTok 热门",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "category": "社交媒体",
+      "command": [
+        "tiktok",
+        "explore",
+        "--limit",
+        "20"
+      ],
+      "_note": "需要登录 Cookie（Strategy: cookie）",
+      "strategy": "cookie"
+    },
+    {
+      "id": "facebook-feed",
+      "name": "Facebook Feed",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "category": "社交媒体",
+      "command": [
+        "facebook",
+        "feed",
+        "--limit",
+        "20"
+      ],
+      "_note": "个人时间线，需要登录 Cookie（Strategy: cookie）",
+      "strategy": "cookie"
+    },
+    {
+      "id": "36kr-hot",
+      "name": "36氪热榜",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "创业"
+      ],
+      "enabled": true,
+      "category": "科技媒体",
+      "command": [
+        "36kr",
+        "hot",
+        "--limit",
+        "20"
+      ],
+      "strategy": "intercept"
+    },
+    {
+      "id": "medium-ai",
+      "name": "Medium Technology",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "技术"
+      ],
+      "enabled": true,
+      "category": "产品发现",
+      "command": [
+        "medium",
+        "feed",
+        "--limit",
+        "20"
+      ],
+      "strategy": "cookie"
+    },
+    {
+      "id": "medium-programming",
+      "name": "Medium Programming",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 48,
+      "topics": [],
+      "enabled": false,
+      "category": "开发者",
+      "command": [
+        "medium",
+        "feed",
+        "--topic",
+        "programming",
+        "--limit",
+        "20"
+      ],
+      "strategy": "cookie"
+    },
+    {
+      "id": "medium-business",
+      "name": "Medium Business",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 48,
+      "topics": [],
+      "enabled": false,
+      "category": "产品发现",
+      "command": [
+        "medium",
+        "feed",
+        "--topic",
+        "business",
+        "--limit",
+        "20"
+      ],
+      "strategy": "cookie"
+    },
+    {
+      "id": "medium-science",
+      "name": "Medium Science",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 48,
+      "topics": [],
+      "enabled": false,
+      "category": "产品发现",
+      "command": [
+        "medium",
+        "feed",
+        "--topic",
+        "science",
+        "--limit",
+        "20"
+      ],
+      "strategy": "cookie"
+    },
+    {
+      "id": "substack-feed",
+      "name": "Substack 热门",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 48,
+      "topics": [],
+      "enabled": false,
+      "category": "开发者",
+      "command": [
+        "substack",
+        "feed",
+        "--category",
+        "all",
+        "--limit",
+        "20"
+      ],
+      "_note": "需要登录 Cookie（Strategy: cookie）",
+      "strategy": "cookie",
+      "searchable": true,
+      "searchCommand": [
+        "substack",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "substack-tech",
+      "name": "Substack Tech",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 48,
+      "topics": [],
+      "enabled": false,
+      "category": "开发者",
+      "command": [
+        "substack",
+        "feed",
+        "--category",
+        "tech",
+        "--limit",
+        "20"
+      ],
+      "_note": "需要登录 Cookie（Strategy: cookie）",
+      "strategy": "cookie"
+    },
+    {
+      "id": "substack-business",
+      "name": "Substack Business",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 48,
+      "topics": [],
+      "enabled": false,
+      "category": "产品发现",
+      "command": [
+        "substack",
+        "feed",
+        "--category",
+        "business",
+        "--limit",
+        "20"
+      ],
+      "_note": "需要登录 Cookie（Strategy: cookie）",
+      "strategy": "cookie"
+    },
+    {
+      "id": "substack-science",
+      "name": "Substack Science",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 72,
+      "topics": [],
+      "enabled": false,
+      "category": "产品发现",
+      "command": [
+        "substack",
+        "feed",
+        "--category",
+        "science",
+        "--limit",
+        "20"
+      ],
+      "_note": "需要登录 Cookie（Strategy: cookie）",
+      "strategy": "cookie"
+    },
+    {
+      "id": "xueqiu-hot",
+      "name": "雪球热门动态",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "category": "金融",
+      "command": [
+        "xueqiu",
+        "hot",
+        "--limit",
+        "20"
+      ],
+      "_note": "需要登录 Cookie（Strategy: cookie）",
+      "strategy": "cookie",
+      "searchable": true,
+      "searchCommand": [
+        "xueqiu",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "xueqiu-hot-stock",
+      "name": "雪球热门股票",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "category": "金融",
+      "command": [
+        "xueqiu",
+        "hot-stock",
+        "--limit",
+        "20"
+      ],
+      "_note": "需要登录 Cookie（Strategy: cookie）",
+      "strategy": "cookie"
+    },
+    {
+      "id": "tw-karpathy",
+      "name": "@karpathy (Twitter)",
+      "adapter": "twitter",
+      "url": "https://twitter.com/karpathy",
+      "hours": 24,
+      "topics": [
+        "LLM",
+        "AI研究",
+        "工程"
+      ],
+      "enabled": true,
+      "category": "社交媒体",
+      "searchable": false
+    },
+    {
+      "id": "tw-ylecun",
+      "name": "@ylecun (Twitter)",
+      "adapter": "twitter",
+      "url": "https://twitter.com/ylecun",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "开源",
+        "争论"
+      ],
+      "enabled": true,
+      "category": "社交媒体",
+      "searchable": false
+    },
+    {
+      "id": "tw-sama",
+      "name": "@sama (Twitter)",
+      "adapter": "twitter",
+      "url": "https://twitter.com/sama",
+      "hours": 24,
+      "topics": [
+        "OpenAI",
+        "AGI",
+        "行业"
+      ],
+      "enabled": true,
+      "category": "社交媒体",
+      "searchable": false
+    },
+    {
+      "id": "tw-swyx",
+      "name": "@swyx (Twitter)",
+      "adapter": "twitter",
+      "url": "https://twitter.com/swyx",
+      "hours": 24,
+      "topics": [
+        "AI工程",
+        "开发者",
+        "产品"
+      ],
+      "enabled": true,
+      "category": "社交媒体",
+      "searchable": false
+    },
+    {
+      "id": "tw-drjimfan",
+      "name": "@DrJimFan (Twitter)",
+      "adapter": "twitter",
+      "url": "https://twitter.com/DrJimFan",
+      "hours": 24,
+      "topics": [
+        "Agent",
+        "具身智能",
+        "NVIDIA"
+      ],
+      "enabled": true,
+      "category": "社交媒体",
+      "searchable": false
+    },
+    {
+      "id": "mastodon-ai",
+      "name": "Mastodon #ai",
+      "adapter": "rss",
+      "url": "https://mastodon.social/tags/ai.rss",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "社区",
+        "开源"
+      ],
+      "enabled": true,
+      "category": "社交媒体"
+    },
+    {
+      "id": "mastodon-llm",
+      "name": "Mastodon #llm",
+      "adapter": "rss",
+      "url": "https://mastodon.social/tags/llm.rss",
+      "hours": 24,
+      "topics": [
+        "LLM",
+        "AI",
+        "开源"
+      ],
+      "enabled": true,
+      "category": "社交媒体"
+    },
+    {
+      "id": "bsky-ai",
+      "name": "Bluesky #ai",
+      "adapter": "rss",
+      "url": "https://bsky.app/profile/did:plc:fake/rss",
+      "hours": 24,
+      "topics": [
+        "AI"
+      ],
+      "enabled": false,
+      "category": "社交媒体",
+      "_note": "Bluesky 暂不提供公开 hashtag RSS，待官方支持"
+    },
+    {
+      "id": "tg-aibrief",
+      "name": "AI Brief (Telegram)",
+      "adapter": "telegram",
+      "url": "https://t.me/aibrief",
+      "hours": 24,
+      "topics": [
+        "AI",
+        "快讯"
+      ],
+      "enabled": true,
+      "category": "社交媒体"
+    },
+    {
+      "id": "tg-aigclink",
+      "name": "AIGC Link (Telegram)",
+      "adapter": "telegram",
+      "url": "https://t.me/aigclink",
+      "hours": 24,
+      "topics": [
+        "AIGC",
+        "工具",
+        "应用"
+      ],
+      "enabled": true,
+      "category": "社交媒体"
+    },
+    {
+      "id": "linkedin-jobs",
+      "name": "LinkedIn 职位",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 48,
+      "topics": [],
+      "enabled": false,
+      "category": "职场",
+      "command": [
+        "linkedin",
+        "search",
+        "--limit",
+        "20"
+      ],
+      "_note": "职位搜索，需配合 --keyword 指定职位关键词；需要登录 Cookie",
+      "strategy": "cookie",
+      "searchable": true,
+      "searchCommand": [
+        "linkedin",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "boss-jobs",
+      "name": "BOSS直聘 职位",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 48,
+      "topics": [],
+      "enabled": false,
+      "category": "职场",
+      "command": [
+        "boss",
+        "search",
+        "--limit",
+        "20"
+      ],
+      "_note": "职位搜索，需配合 --keyword 指定职位关键词；需要登录 Cookie",
+      "strategy": "cookie"
+    },
+    {
+      "id": "twitter-search",
+      "name": "Twitter 搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "category": "社交媒体",
+      "command": [
+        "twitter",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "twitter",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ],
+      "searchable": true,
+      "strategy": "cookie"
+    },
+    {
+      "id": "youtube-search",
+      "name": "YouTube 搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "category": "视频",
+      "command": [
+        "youtube",
+        "search",
+        "AI",
+        "--limit",
+        "10"
+      ],
+      "searchCommand": [
+        "youtube",
+        "search",
+        "{keyword}",
+        "--limit",
+        "10"
+      ],
+      "searchable": true,
+      "strategy": "cookie"
+    },
+    {
+      "id": "medium-search",
+      "name": "Medium 搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "category": "内容",
+      "command": [
+        "medium",
+        "search",
+        "AI",
+        "--limit",
+        "10"
+      ],
+      "searchCommand": [
+        "medium",
+        "search",
+        "{keyword}",
+        "--limit",
+        "10"
+      ],
+      "searchable": true,
+      "strategy": "cookie"
+    },
+    {
+      "id": "instagram-search",
+      "name": "Instagram 搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "category": "社交媒体",
+      "command": [
+        "instagram",
+        "search",
+        "AI",
+        "--limit",
+        "10"
+      ],
+      "searchCommand": [
+        "instagram",
+        "search",
+        "{keyword}",
+        "--limit",
+        "10"
+      ],
+      "searchable": true,
+      "strategy": "cookie"
+    },
+    {
+      "id": "xiaohongshu-search",
+      "name": "小红书搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "cookie",
+      "command": [
+        "xiaohongshu",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "xiaohongshu",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "stackoverflow-search",
+      "name": "Stack Overflow 搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "api",
+      "command": [
+        "stackoverflow",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "stackoverflow",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "wikipedia-search",
+      "name": "Wikipedia 搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 168,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "api",
+      "command": [
+        "wikipedia",
+        "search",
+        "AI",
+        "--limit",
+        "10"
+      ],
+      "searchCommand": [
+        "wikipedia",
+        "search",
+        "{keyword}",
+        "--limit",
+        "10"
+      ]
+    },
+    {
+      "id": "tieba-search",
+      "name": "百度贴吧搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "cookie",
+      "command": [
+        "tieba",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "tieba",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "linux-do-search",
+      "name": "Linux.do 搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "cookie",
+      "command": [
+        "linux-do",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "linux-do",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "jike-search",
+      "name": "即刻搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "cookie",
+      "command": [
+        "jike",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "jike",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "google-search",
+      "name": "Google 搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "api",
+      "command": [
+        "google",
+        "search",
+        "AI",
+        "--limit",
+        "10"
+      ],
+      "searchCommand": [
+        "google",
+        "search",
+        "{keyword}",
+        "--limit",
+        "10"
+      ]
+    },
+    {
+      "id": "boss-search",
+      "name": "BOSS直聘搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "cookie",
+      "command": [
+        "boss",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "boss",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "douban-search",
+      "name": "豆瓣搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "api",
+      "command": [
+        "douban",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "douban",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "reuters-search",
+      "name": "路透社搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "api",
+      "command": [
+        "reuters",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "reuters",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "facebook-search",
+      "name": "Facebook 搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "cookie",
+      "command": [
+        "facebook",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "facebook",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "spotify-search",
+      "name": "Spotify 搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "api",
+      "command": [
+        "spotify",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "spotify",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "apple-podcasts-search",
+      "name": "Apple Podcasts 搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "api",
+      "command": [
+        "apple-podcasts",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "apple-podcasts",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "pixiv-search",
+      "name": "Pixiv 搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "cookie",
+      "command": [
+        "pixiv",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "pixiv",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "imdb-search",
+      "name": "IMDb 搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 168,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "api",
+      "command": [
+        "imdb",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "imdb",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "smzdm-search",
+      "name": "什么值得买搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "api",
+      "command": [
+        "smzdm",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "smzdm",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    },
+    {
+      "id": "sinablog-search",
+      "name": "新浪博客搜索",
+      "adapter": "opencli",
+      "url": "",
+      "hours": 24,
+      "topics": [],
+      "enabled": false,
+      "searchable": true,
+      "strategy": "api",
+      "command": [
+        "sinablog",
+        "search",
+        "AI",
+        "--limit",
+        "20"
+      ],
+      "searchCommand": [
+        "sinablog",
+        "search",
+        "{keyword}",
+        "--limit",
+        "20"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "_comment": "Curated list of notable AI/tech builders, researchers, and founders worth following on Twitter/X",
+  "lists": {
+    "ai-researchers": {
+      "name": "AI Researchers",
+      "description": "Leading ML researchers and scientists",
+      "accounts": [
+        { "name": "Andrej Karpathy", "handle": "karpathy", "role": "AI researcher, ex-Tesla/OpenAI" },
+        { "name": "Yann LeCun", "handle": "ylecun", "role": "Meta Chief AI Scientist, Turing Award" },
+        { "name": "Geoffrey Hinton", "handle": "geoffreyhinton", "role": "Turing Award, godfather of deep learning" },
+        { "name": "Yoshua Bengio", "handle": "yoshuabengio", "role": "Turing Award, Mila founder" },
+        { "name": "Pieter Abbeel", "handle": "pabbeel", "role": "UC Berkeley, robot learning" },
+        { "name": "Chelsea Finn", "handle": "chelseabfinn", "role": "Stanford, meta-learning" },
+        { "name": "Sergey Levine", "handle": "svlevine", "role": "UC Berkeley, robot learning" },
+        { "name": "Lilian Weng", "handle": "lilianweng", "role": "OpenAI, AI safety" },
+        { "name": "Amanda Askell", "handle": "AmandaAskell", "role": "Anthropic, alignment" },
+        { "name": "Yannic Kilcher", "handle": "ykilcher", "role": "ML paper explainer" },
+        { "name": "Neel Nanda", "handle": "NeelNanda5", "role": "DeepMind, mechanistic interpretability" },
+        { "name": "Chris Olah", "handle": "ch402", "role": "Anthropic, neural network interpretability" },
+        { "name": "Shreya Shankar", "handle": "sh_reya", "role": "UC Berkeley, MLOps" },
+        { "name": "Jim Fan", "handle": "DrJimFan", "role": "NVIDIA, embodied AI" },
+        { "name": "Jeff Dean", "handle": "JeffDean", "role": "Google DeepMind Chief Scientist" },
+        { "name": "Oriol Vinyals", "handle": "OriolVinyalsML", "role": "Google DeepMind" },
+        { "name": "Noam Shazeer", "handle": "noamshazeer", "role": "Character.ai, Transformer co-inventor" },
+        { "name": "Ilya Sutskever", "handle": "ilyasut", "role": "Safe Superintelligence, ex-OpenAI" }
+      ]
+    },
+    "ai-founders-ceos": {
+      "name": "AI Founders & CEOs",
+      "description": "Founders and executives of leading AI companies",
+      "accounts": [
+        { "name": "Sam Altman", "handle": "sama", "role": "OpenAI CEO" },
+        { "name": "Dario Amodei", "handle": "DarioAmodei", "role": "Anthropic CEO" },
+        { "name": "Demis Hassabis", "handle": "demishassabis", "role": "Google DeepMind CEO" },
+        { "name": "Jensen Huang", "handle": "jensenhhuang", "role": "NVIDIA CEO" },
+        { "name": "Emad Mostaque", "handle": "EMostaque", "role": "ex-Stability AI" },
+        { "name": "Arthur Mensch", "handle": "arthurmensrch", "role": "Mistral AI CEO" },
+        { "name": "Aidan Gomez", "handle": "aidangomez", "role": "Cohere CEO" },
+        { "name": "Alexandr Wang", "handle": "alexandr_wang", "role": "Scale AI CEO" },
+        { "name": "Amjad Masad", "handle": "amasad", "role": "Replit CEO" },
+        { "name": "Guillermo Rauch", "handle": "rauchg", "role": "Vercel CEO" },
+        { "name": "Greg Brockman", "handle": "gdb", "role": "ex-OpenAI President" },
+        { "name": "Mustafa Suleyman", "handle": "mustafasuleyman", "role": "Microsoft AI CEO, ex-DeepMind" }
+      ]
+    },
+    "ai-builders-devs": {
+      "name": "AI Builders & Developers",
+      "description": "Practitioners building AI products and tools",
+      "accounts": [
+        { "name": "Swyx", "handle": "swyx", "role": "Latent Space, AI engineer" },
+        { "name": "Simon Willison", "handle": "simonw", "role": "Datasette, LLM tools" },
+        { "name": "Hamel Husain", "handle": "HamelHusain", "role": "AI consultant, LLM fine-tuning" },
+        { "name": "Eugene Yan", "handle": "eugeneyan", "role": "Amazon, applied ML" },
+        { "name": "Chip Huyen", "handle": "chipro", "role": "Author, MLOps" },
+        { "name": "Josh Tobin", "handle": "josh_tobin_", "role": "Gantry, applied ML" },
+        { "name": "Shreya Shankar", "handle": "sh_reya", "role": "UC Berkeley, MLOps" },
+        { "name": "Dan Becker", "handle": "dan_s_becker", "role": "Weights & Biases" },
+        { "name": "Ethan Mollick", "handle": "emollick", "role": "Wharton, AI in education" },
+        { "name": "Alex Albert", "handle": "alexalbert__", "role": "Anthropic, Claude" },
+        { "name": "Peter Yang", "handle": "petergyang", "role": "Product, AI" },
+        { "name": "Dan Shipper", "handle": "danshipper", "role": "Every, AI writing" },
+        { "name": "Nan Yu", "handle": "thenanyu", "role": "AI builder" },
+        { "name": "Thariq", "handle": "trq212", "role": "AI builder" },
+        { "name": "Cat Wu", "handle": "_catwu", "role": "AI builder" },
+        { "name": "Josh Woodward", "handle": "joshwoodward", "role": "Google Labs" },
+        { "name": "Kevin Weil", "handle": "kevinweil", "role": "OpenAI CPO" },
+        { "name": "Ryo Lu", "handle": "ryolu_", "role": "AI products" },
+        { "name": "Aditya Agarwal", "handle": "adityaag", "role": "Engineering leader" },
+        { "name": "Peter Steinberger", "handle": "steipete", "role": "AI tools developer" }
+      ]
+    },
+    "vc-investors": {
+      "name": "VCs & Investors",
+      "description": "Top investors in AI and tech",
+      "accounts": [
+        { "name": "Garry Tan", "handle": "garrytan", "role": "YC President" },
+        { "name": "Aaron Levie", "handle": "levie", "role": "Box CEO" },
+        { "name": "Matt Turck", "handle": "mattturck", "role": "FirstMark Capital" },
+        { "name": "Zara Zhang", "handle": "zarazhangrui", "role": "Khosla Ventures" },
+        { "name": "Nikunj Kothari", "handle": "nikunj", "role": "VC" },
+        { "name": "Sarah Guo", "handle": "saranormous", "role": "Conviction VC" },
+        { "name": "Martin Casado", "handle": "martin_casado", "role": "a16z" },
+        { "name": "Jack Clark", "handle": "jackclark", "role": "Anthropic co-founder" }
+      ]
+    },
+    "ai-news-media": {
+      "name": "AI News & Media",
+      "description": "Journalists and media covering AI",
+      "accounts": [
+        { "name": "Claude (Anthropic)", "handle": "claudeai", "role": "Anthropic's Claude official" },
+        { "name": "Google Labs", "handle": "GoogleLabs", "role": "Google Labs official" }
+      ]
+    }
+  },
+  "infocli_sources": {
+    "_comment": "These accounts are available as Twitter sources in infocli (tw-* prefix)",
+    "available": ["tw-karpathy", "tw-ylecun", "tw-sama", "tw-swyx", "tw-drjimfan"]
+  }
+}

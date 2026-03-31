@@ -1,0 +1,67 @@
+{
+  "_comment": "Curated list of quality subreddits organized by domain",
+  "communities": {
+    "ai-ml": {
+      "name": "AI & Machine Learning",
+      "description": "Artificial intelligence and machine learning communities",
+      "subreddits": [
+        { "name": "r/LocalLLaMA", "id": "reddit-locallama", "description": "Local LLM discussion, news, benchmarks", "quality": "high", "infocli_id": "reddit-locallama" },
+        { "name": "r/MachineLearning", "id": "reddit-ml", "description": "Academic ML papers and research", "quality": "high", "infocli_id": "reddit-ml" },
+        { "name": "r/ArtificialIntelligence", "id": null, "description": "General AI discussion", "quality": "medium" },
+        { "name": "r/artificial", "id": null, "description": "AI news and discussion", "quality": "medium" },
+        { "name": "r/agi", "id": null, "description": "Artificial General Intelligence", "quality": "medium" },
+        { "name": "r/ChatGPT", "id": null, "description": "ChatGPT users and news", "quality": "medium" },
+        { "name": "r/singularity", "id": "reddit-singularity", "description": "Technological singularity and AI futures", "quality": "medium", "infocli_id": "reddit-singularity" },
+        { "name": "r/ainews", "id": "reddit-ainews", "description": "AI industry news", "quality": "high", "infocli_id": "reddit-ainews" },
+        { "name": "r/datascience", "id": "reddit-datascience", "description": "Data science, analytics, ML in practice", "quality": "high", "infocli_id": "reddit-datascience" }
+      ]
+    },
+    "programming": {
+      "name": "Programming",
+      "description": "Software development communities",
+      "subreddits": [
+        { "name": "r/programming", "id": "reddit-programming", "description": "General programming discussion", "quality": "high", "infocli_id": "reddit-programming" },
+        { "name": "r/golang", "id": "reddit-golang", "description": "Go programming language", "quality": "high", "infocli_id": "reddit-golang" },
+        { "name": "r/rust", "id": "reddit-rust", "description": "Rust programming language", "quality": "high", "infocli_id": "reddit-rust" },
+        { "name": "r/Python", "id": "reddit-python", "description": "Python language and ecosystem", "quality": "high", "infocli_id": "reddit-python" },
+        { "name": "r/webdev", "id": "reddit-webdev", "description": "Web development", "quality": "high", "infocli_id": "reddit-webdev" },
+        { "name": "r/netsec", "id": "reddit-netsec", "description": "Network security, InfoSec", "quality": "high", "infocli_id": "reddit-netsec" },
+        { "name": "r/javascript", "id": null, "description": "JavaScript ecosystem", "quality": "high" },
+        { "name": "r/typescript", "id": null, "description": "TypeScript language", "quality": "high" },
+        { "name": "r/devops", "id": null, "description": "DevOps practices and tools", "quality": "medium" }
+      ]
+    },
+    "technology": {
+      "name": "Technology",
+      "description": "General tech news and discussion",
+      "subreddits": [
+        { "name": "r/technology", "id": "reddit-technology", "description": "Technology news", "quality": "high", "infocli_id": "reddit-technology" },
+        { "name": "r/Futurology", "id": "reddit-futurology", "description": "Future technology and society", "quality": "medium", "infocli_id": "reddit-futurology" },
+        { "name": "r/science", "id": "reddit-science", "description": "Science news with citations", "quality": "high", "infocli_id": "reddit-science" },
+        { "name": "r/gadgets", "id": null, "description": "Consumer electronics", "quality": "medium" }
+      ]
+    },
+    "economics-finance": {
+      "name": "Economics & Finance",
+      "description": "Economics, investing, and financial markets",
+      "subreddits": [
+        { "name": "r/economics", "id": "reddit-economics", "description": "Economics research and news", "quality": "high", "infocli_id": "reddit-economics" },
+        { "name": "r/finance", "id": "reddit-finance", "description": "Financial markets and investing", "quality": "high", "infocli_id": "reddit-finance" },
+        { "name": "r/investing", "id": "reddit-investing", "description": "Long-term investing strategies", "quality": "high", "infocli_id": "reddit-investing" },
+        { "name": "r/CryptoCurrency", "id": "reddit-crypto", "description": "Crypto news and discussion", "quality": "medium", "infocli_id": "reddit-crypto" },
+        { "name": "r/wallstreetbets", "id": null, "description": "Speculative trading (entertainment)", "quality": "low" },
+        { "name": "r/personalfinance", "id": null, "description": "Personal finance advice", "quality": "high" },
+        { "name": "r/worldnews", "id": "reddit-worldnews", "description": "World news affecting markets", "quality": "medium", "infocli_id": "reddit-worldnews" }
+      ]
+    },
+    "startups-entrepreneurship": {
+      "name": "Startups & Entrepreneurship",
+      "description": "Startup news and founder communities",
+      "subreddits": [
+        { "name": "r/startups", "id": null, "description": "Startup discussion and advice", "quality": "high" },
+        { "name": "r/Entrepreneur", "id": null, "description": "Entrepreneurship", "quality": "medium" },
+        { "name": "r/SideProject", "id": null, "description": "Side projects and indie hacking", "quality": "medium" }
+      ]
+    }
+  }
+}

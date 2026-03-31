@@ -1,0 +1,36 @@
+{
+  "_comment": "Named topic presets. Use with --topics <name> to filter by predefined keywords.",
+  "topics": {
+    "ai": [
+      "AI", "人工智能", "大模型", "LLM", "AGI", "智能体", "Agent",
+      "Transformer", "RAG", "多模态", "推理", "微调", "具身",
+      "GPT", "ChatGPT", "Claude", "Gemini", "Llama", "Grok",
+      "Copilot", "Sora", "Midjourney", "Stable Diffusion",
+      "DeepSeek", "豆包", "通义", "文心", "Kimi", "混元",
+      "Qwen", "讯飞", "智谱", "月之暗面", "MiniMax",
+      "OpenAI", "Anthropic", "DeepMind", "xAI", "Mistral",
+      "自动驾驶", "机器人", "AI编程", "AI原生"
+    ],
+    "tech": [
+      "编程", "开发", "软件", "硬件", "科技", "创业", "产品",
+      "JavaScript", "Python", "Rust", "Go", "TypeScript",
+      "云计算", "微服务", "开源", "DevOps", "API"
+    ],
+    "crypto": [
+      "加密货币", "Bitcoin", "BTC", "Ethereum", "ETH",
+      "区块链", "DeFi", "NFT", "Web3", "Crypto"
+    ],
+    "robotics": [
+      "机器人", "自动驾驶", "具身智能", "Robotics",
+      "Boston Dynamics", "Tesla Bot", "Optimus", "Figure"
+    ],
+    "finance": [
+      "股票", "基金", "投资", "理财", "经济", "美股", "A股",
+      "纳斯达克", "标普", "美联储", "降息", "加息"
+    ],
+    "science": [
+      "物理", "化学", "生物", "天文", "量子", "基因", "蛋白质",
+      "Nature", "Science", "研究", "发现", "实验"
+    ]
+  }
+}
