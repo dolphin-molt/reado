@@ -93,8 +93,10 @@ lark-cli auth login
 # 1. AI 全源采集（66 个源：公司博客、科技媒体、学术、社区等）
 reado search --bundle ai -t 24 --no-cache -f json
 
-# 2. Twitter 监控清单（~58 个账号）
+# 2. Twitter 采集（见下方 Twitter 账号优先级说明）
 reado twitter timeline -t 24 --no-cache -f json
+# 或按 skill 配置的账号逐个采集：
+reado twitter timeline <username1> <username2> ... -t 24 --no-cache -f json
 
 # 3. Hacker News 热门
 reado hackernews top -t 24 -f json
@@ -104,7 +106,17 @@ reado search -s github-trending -f json
 ```
 
 详细的命令说明、JSON 格式和分类映射见 `reference/data-sources.md`。
-Twitter 监控账号列表见 `reference/twitter-accounts.md`。
+
+#### Twitter 账号优先级
+
+`reference/twitter-accounts.md` 是 **主导配置**。采集 Twitter 时按以下优先级：
+
+1. **Skill 侧** `reference/twitter-accounts.md` — 如果此文件中列出了账号，以此为准。从中提取所有 handle，作为 `reado twitter timeline <handles...>` 的参数
+2. **Reado 侧** `~/.reado/twitter-watchlist.txt` — 仅当 skill 侧未配置（文件不存在或无账号）时使用，作为降级方案
+
+执行时：读取 `reference/twitter-accounts.md`，解析所有表格中的 handle 列，去掉 `@` 前缀，传给 `reado twitter timeline`。
+
+Skill 侧同时提供每个账号的身份信息（人名、角色、公司），用于 AI 生成摘要时的分类和介绍。
 
 **容错处理：**
 - reado 未安装 → 终止并输出安装指引
@@ -164,4 +176,4 @@ Twitter 监控账号列表见 `reference/twitter-accounts.md`。
 4. **摘要简洁** — 中文 ≤50 字 / 英文 ≤20 词
 5. **Top 5 跨所有板块** — 不局限于某个分类
 6. **时间窗口** — 所有源 24h，GitHub Releases 可放宽到 7d
-7. **Twitter 账号参考** — 见 `reference/twitter-accounts.md`，实际清单在 `~/.reado/twitter-watchlist.txt`
+7. **Twitter 账号** — `reference/twitter-accounts.md` 是主导配置，`~/.reado/twitter-watchlist.txt` 仅作降级方案
