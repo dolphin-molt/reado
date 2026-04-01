@@ -19,11 +19,18 @@ interface ParsedFeedItem {
   source?: string
 }
 
+/** XML 最大允许大小：5MB，超过视为异常数据 */
+const MAX_XML_SIZE = 5 * 1024 * 1024
+
 /**
  * 解析 RSS 2.0 / Atom / RDF feed XML
  * 返回归一化的条目列表
  */
 export function parseRSSFeed(xml: string, sourceName: string, sourceId: string): InfoItem[] {
+  if (xml.length > MAX_XML_SIZE) {
+    throw new Error(`XML 数据过大 (${(xml.length / 1024 / 1024).toFixed(1)}MB)，已跳过解析`)
+  }
+
   const doc = parser.parse(xml)
 
   // RSS 2.0

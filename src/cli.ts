@@ -11,6 +11,7 @@ import { runHot } from './commands/hot.js'
 import { runTopicsList, runTopicsShow } from './commands/topics.js'
 import { runOpencliPassthrough } from './utils/passthrough.js'
 import { runBilibiliSearch } from './commands/bilibili-search.js'
+import { loadWatchlist, addToWatchlist, removeFromWatchlist, getWatchlistPath, watchlistToSourceConfigs } from './core/twitter-watchlist.js'
 
 /** 通用 options，所有数据命令共享 */
 function addCommonOpts(cmd: Command): Command {
@@ -419,20 +420,74 @@ export function createCLI(): Command {
 
   addCommonOpts(
     twitterCmd.command('timeline [users...]')
-      .description('Twitter 时间线 (不传则用预设账号: karpathy/ylecun/sama/swyx/DrJimFan)')
+      .description('Twitter 时间线 (不传则用监控清单，清单为空用预设账号)')
       .option('--topics <topics>', '话题过滤')
   ).action(async (users: string[], opts) => {
     if (users && users.length > 0) {
-      const ids = users.map(u => `tw-${u.replace('@', '').toLowerCase()}`)
-      await runSearch([], { ...opts, source: ids, keyword: opts.topics ? [opts.topics] : undefined })
+      // 临时查看指定用户，直接构造 SourceConfig
+      const configs = watchlistToSourceConfigs(users.map(u => u.replace(/^@/, '').toLowerCase()))
+      await runSearch([], { ...opts, sourcesOverride: configs, keyword: opts.topics ? [opts.topics] : undefined })
     } else {
-      await runSearch([], {
-        ...opts,
-        source: ['tw-karpathy', 'tw-ylecun', 'tw-sama', 'tw-swyx', 'tw-drjimfan'],
-        keyword: opts.topics ? [opts.topics] : undefined,
-      })
+      // 优先用监控清单，清单为空则降级到默认5人
+      const watchlist = loadWatchlist()
+      if (watchlist.length > 0) {
+        const configs = watchlistToSourceConfigs(watchlist)
+        await runSearch([], { ...opts, sourcesOverride: configs, keyword: opts.topics ? [opts.topics] : undefined })
+      } else {
+        await runSearch([], {
+          ...opts,
+          source: ['tw-karpathy', 'tw-ylecun', 'tw-sama', 'tw-swyx', 'tw-drjimfan'],
+          keyword: opts.topics ? [opts.topics] : undefined,
+        })
+      }
     }
   })
+
+  // ── twitter 监控清单管理 ──
+  twitterCmd.command('watch <username>')
+    .description('添加用户到监控清单')
+    .action((username: string) => {
+      const { added, normalized } = addToWatchlist(username)
+      if (added) {
+        console.log(chalk.green(`✅ 已添加 @${normalized} 到监控清单`))
+      } else {
+        console.log(chalk.yellow(`@${normalized} 已在监控清单中`))
+      }
+      console.log(chalk.gray(`清单文件: ${getWatchlistPath()}`))
+    })
+
+  twitterCmd.command('unwatch <username>')
+    .description('从监控清单移除用户')
+    .action((username: string) => {
+      const { removed, normalized } = removeFromWatchlist(username)
+      if (removed) {
+        console.log(chalk.green(`✅ 已从监控清单移除 @${normalized}`))
+      } else {
+        console.log(chalk.yellow(`@${normalized} 不在监控清单中`))
+      }
+    })
+
+  twitterCmd.command('watchlist')
+    .description('查看监控清单')
+    .action(() => {
+      const list = loadWatchlist()
+      if (list.length === 0) {
+        console.log(chalk.gray('\n  监控清单为空'))
+        console.log(chalk.gray('  添加: reado twitter watch <username>'))
+        console.log(chalk.gray(`  或直接编辑: ${getWatchlistPath()}\n`))
+        return
+      }
+      console.log('')
+      console.log(chalk.bold(`  Twitter 监控清单 (${list.length} 人)`))
+      console.log('')
+      for (const name of list) {
+        console.log(`  • @${name}`)
+      }
+      console.log('')
+      console.log(chalk.gray(`  文件: ${getWatchlistPath()}`))
+      console.log(chalk.gray('  运行 reado twitter timeline 获取最新内容'))
+      console.log('')
+    })
 
   twitterCmd.command('trending').description('热门话题').option('-f, --format <fmt>', '输出格式', 'table')
     .action(async (opts) => { await runOpencliPassthrough(['twitter', 'trending', '-f', opts.format]) })
@@ -1328,6 +1383,7 @@ export function createCLI(): Command {
     program.command('hot [platform]')
       .description('各平台热榜 (快捷命令)')
       .option('--bundle <id>', '主题包')
+      .option('--topics <topics>', '关键词过滤 (如: AI 或 "GPT,Claude"，不指定则显示全部)')
   ).action(async (platform: string | undefined, opts) => {
     await runHot(platform, opts)
   })

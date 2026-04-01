@@ -43,7 +43,17 @@ export function exportHTML(
   const dateStr = result.fetchedAt.toISOString().slice(0, 10)
   const timeStr = result.fetchedAt.toISOString().slice(11, 16).replace(':', '')
   const defaultPath = join(outputDir, `report-${dateStr}-${timeStr}-${theme}.html`)
-  const filePath = opts.outputPath ? resolve(opts.outputPath) : defaultPath
+
+  let filePath = defaultPath
+  if (opts.outputPath) {
+    filePath = resolve(opts.outputPath)
+    // 安全检查：禁止写入系统目录
+    const homeDir = homedir()
+    const cwd = process.cwd()
+    if (!filePath.startsWith(homeDir) && !filePath.startsWith(cwd) && !filePath.startsWith('/tmp')) {
+      throw new Error(`输出路径不安全: ${filePath}，只允许写入用户目录、当前目录或 /tmp`)
+    }
+  }
 
   // 写入文件
   writeFileSync(filePath, html, 'utf-8')

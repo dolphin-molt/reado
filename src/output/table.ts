@@ -20,7 +20,9 @@ export function formatTable(result: AggregateResult): string {
   }
 
   for (const [sourceName, items] of grouped) {
-    lines.push(chalk.bold.yellow(`  ▸ ${sourceName} (${items.length})`))
+    const truncated = items.length > 10
+    const countStr = truncated ? chalk.gray(`${items.length}`) : String(items.length)
+    lines.push(chalk.bold.yellow(`  ▸ ${sourceName} `) + chalk.yellow(`(${countStr})`))
 
     const table = new Table({
       chars: {
@@ -34,7 +36,9 @@ export function formatTable(result: AggregateResult): string {
       wordWrap: true,
     })
 
-    for (const item of items.slice(0, 10)) {
+    const TABLE_LIMIT = 10
+    const displayed = items.slice(0, TABLE_LIMIT)
+    for (const item of displayed) {
       const time = item.publishedAt ? timeAgo(item.publishedAt) : ''
       table.push([
         chalk.white(truncateStr(item.title, 48)),
@@ -43,12 +47,16 @@ export function formatTable(result: AggregateResult): string {
     }
 
     lines.push(table.toString())
+    if (items.length > TABLE_LIMIT) {
+      lines.push(chalk.gray(`  … 显示 ${TABLE_LIMIT}/${items.length} 条，使用 -f json 或 -f markdown 查看全部`))
+    }
     lines.push('')
   }
 
   // 统计
   const s = result.stats
-  lines.push(chalk.gray(`  📊 信息源: ${s.totalSources} | 成功: ${chalk.green(String(s.successSources))} | 失败: ${chalk.red(String(s.failedSources))} | 缓存: ${s.cachedSources} | 条目: ${s.totalItems}`))
+  const dedupNote = s.deduplicatedItems > 0 ? chalk.gray(` | 去重: ${s.deduplicatedItems}`) : ''
+  lines.push(chalk.gray(`  📊 信息源: ${s.totalSources} | 成功: ${chalk.green(String(s.successSources))} | 失败: ${chalk.red(String(s.failedSources))} | 缓存: ${s.cachedSources} | 条目: ${s.totalItems}`) + dedupNote)
 
   // 失败信息源
   const failed = result.results.filter(r => r.error)

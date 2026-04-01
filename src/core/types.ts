@@ -74,8 +74,11 @@ export const UserConfigSchema = z.object({
   language: z.enum(['zh', 'en']).default('zh'),
   /**
    * 全局关键词过滤（持久化版 --keyword）
-   * 非空时替代所有源的 topics 设置；空数组 = 不过滤（显示全部）
-   * undefined = 不启用，各源使用自己的 topics
+   * - undefined  = 不启用，各源使用自己的 topics
+   * - []         = 用户主动清空，不过滤（显示全部）
+   * - ["AI",..] = 过滤词表，替代各源自带的 topics
+   *
+   * 注意：仅对 source.topics 非空的源生效（source.topics=[] 代表纯 AI 源，globalTopics 不覆盖它）
    */
   globalTopics: z.array(z.string()).optional(),
   /**
@@ -106,6 +109,8 @@ export interface AggregateResult {
     failedSources: number
     cachedSources: number
     totalItems: number
+    /** 跨源 URL 去重后移除的条目数 */
+    deduplicatedItems: number
   }
   fetchedAt: Date
 }

@@ -2,6 +2,7 @@ import { exec } from 'node:child_process'
 import { promisify } from 'node:util'
 import { which } from '../utils/which.js'
 import { SourceAdapter } from './base.js'
+import { logger } from '../utils/logger.js'
 import type { InfoItem, SourceConfig } from '../core/types.js'
 
 const execAsync = promisify(exec)
@@ -103,7 +104,7 @@ export class OpenCLIAdapter extends SourceAdapter {
 
   async fetch(source: SourceConfig, keyword?: string): Promise<InfoItem[]> {
     if (!source.command || source.command.length === 0) {
-      console.warn(`[opencli] ${source.id}: 未配置 command 字段，跳过`)
+      logger.warn(`[opencli] ${source.id}: 未配置 command 字段，跳过`)
       return []
     }
 
@@ -138,11 +139,11 @@ export class OpenCLIAdapter extends SourceAdapter {
       // 任何失败都静默跳过，不影响其他信息源
       const brief = msg.split('\n')[0].slice(0, 120)
       if (msg.includes('Browser Bridge not connected')) {
-        console.warn(`[opencli] ${source.id}: 浏览器扩展未连接，跳过`)
+        logger.warn(`[opencli] ${source.id}: 浏览器扩展未连接，跳过`)
       } else if (msg.includes('Not logged in')) {
-        console.warn(`[opencli] ${source.id}: 需要登录，跳过`)
+        logger.warn(`[opencli] ${source.id}: 需要登录，跳过`)
       } else {
-        console.warn(`[opencli] ${source.id}: ${brief}，跳过`)
+        logger.warn(`[opencli] ${source.id}: ${brief}，跳过`)
       }
       return []
     }

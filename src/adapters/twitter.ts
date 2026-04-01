@@ -1,6 +1,7 @@
 import { SourceAdapter } from './base.js'
 import { parseRSSFeed } from '../parsers/rss-parser.js'
 import { httpGet } from '../utils/http.js'
+import { logger } from '../utils/logger.js'
 import type { InfoItem, SourceConfig } from '../core/types.js'
 
 /**
@@ -35,7 +36,7 @@ export class TwitterAdapter extends SourceAdapter {
   async fetch(source: SourceConfig): Promise<InfoItem[]> {
     const username = extractUsername(source.url)
     if (!username) {
-      console.warn(`[twitter] 无法解析用户名: ${source.url}`)
+      logger.warn(`[twitter] 无法解析用户名: ${source.url}`)
       return []
     }
 
@@ -53,7 +54,7 @@ export class TwitterAdapter extends SourceAdapter {
     }
 
     // 所有实例失败 — 静默返回空，不影响其他源
-    console.warn(`[twitter] @${username} 所有 nitter 实例均不可用，跳过`)
+    logger.warn(`[twitter] @${username} 所有 nitter 实例均不可用，跳过`)
     return []
   }
 }

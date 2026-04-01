@@ -8,10 +8,12 @@ import { promptSourceSelection, promptSearchSourceSelection } from '../utils/int
 import { getBundles, getBundleSourceIds } from '../core/bundles.js'
 import { setLanguage } from '../utils/i18n.js'
 import { resolveTopics } from '../core/topics.js'
-import type { OutputFormat } from '../core/types.js'
+import type { OutputFormat, SourceConfig } from '../core/types.js'
 
 interface FetchCommandOptions {
   source?: string[]
+  /** 直接传入 SourceConfig，跳过 ID 解析（用于动态生成的源，如 twitter watchlist） */
+  sourcesOverride?: SourceConfig[]
   hours?: string
   format?: string
   limit?: string
@@ -55,7 +57,7 @@ export async function runSearch(categories: string[], opts: FetchCommandOptions)
   const concurrency = opts.concurrency
     ? parseInt(opts.concurrency, 10)
     : config.defaults.concurrency
-  // html 格式默认不限条目数（显示所有），其他格式用配置值
+  // html 格式默认不限条目数（写文件，无需截断），其他格式用配置值
   const maxItems = opts.limit
     ? parseInt(opts.limit, 10)
     : format === 'html' ? 0 : config.defaults.maxItems
@@ -87,58 +89,65 @@ export async function runSearch(categories: string[], opts: FetchCommandOptions)
 
   const overrides = config.enabledOverrides ?? []
 
-  // 解析信息源：--source > categories 参数 > 交互选择
-  let sourceIds: string[]
-  let explicitSource = false
-  if (opts.source && opts.source.length > 0) {
-    // 直接指定 source ID — 允许 enabled:false 的源（用户明确要求）
-    sourceIds = opts.source
-    explicitSource = true
-    // 只对真正不存在于 default-sources 中的 ID 报错
-    const allDefaultIds = new Set(getDefaultSources().map(s => s.id))
-    const unknown = sourceIds.filter(id => !allDefaultIds.has(id))
-    if (unknown.length > 0) {
-      console.log(chalk.yellow(`⚠ 未知信息源 ID: ${unknown.join(', ')}`))
-      console.log(chalk.gray('运行 reado sources list 查看所有可用 ID'))
-    }
-  } else if (opts.bundle) {
-    // Use bundle sources (allowDisabled: true for explicit bundle selection)
-    const bundleSourceIds = getBundleSourceIds(opts.bundle)
-    if (bundleSourceIds.length === 0) {
-      const available = getBundles().map(b => `  ${b.emoji} ${b.id.padEnd(12)} ${b.nameZh} / ${b.name}`).join('\n')
-      console.log(chalk.red(`未找到主题包: ${opts.bundle}`))
-      console.log(chalk.gray('可用主题包:\n' + available))
-      return
-    }
-    sourceIds = bundleSourceIds
-    explicitSource = true  // allow disabled sources in bundle
-  } else if (categories.length > 0) {
-    // 按板块名过滤
-    sourceIds = getSourceIdsForCategories(config, categories)
-    if (sourceIds.length === 0) {
-      console.log(chalk.yellow('未找到匹配的信息源。'))
-      console.log(chalk.gray('可用板块:'))
-      for (const name of Object.keys(config.categories)) {
-        console.log(chalk.gray(`  - ${name}`))
-      }
-      return
-    }
-  } else {
-    // 什么都没指定 → 交互式选择（仅展示支持关键词搜索的源）
-    const allSources = getDefaultSources()
-    const result = await promptSearchSourceSelection(allSources)
-    if (result.cancelled) {
-      console.log(chalk.gray('已取消。'))
-      return
-    }
-    sourceIds = result.sourceIds
-    explicitSource = true  // 允许 enabled:false 的可搜索源
-  }
+  // sourcesOverride 直接绕过 ID 解析（动态生成的源，如 twitter watchlist）
+  let sources: SourceConfig[]
 
-  const sources = resolveSourceConfigs(sourceIds, explicitSource, overrides)
-  if (sources.length === 0) {
-    console.log(chalk.yellow('所有信息源均已禁用或未定义。'))
-    return
+  if (opts.sourcesOverride && opts.sourcesOverride.length > 0) {
+    sources = opts.sourcesOverride
+  } else {
+    // 解析信息源：--source > categories 参数 > 交互选择
+    let sourceIds: string[]
+    let explicitSource = false
+    if (opts.source && opts.source.length > 0) {
+      // 直接指定 source ID — 允许 enabled:false 的源（用户明确要求）
+      sourceIds = opts.source
+      explicitSource = true
+      // 只对真正不存在于 default-sources 中的 ID 报错
+      const allDefaultIds = new Set(getDefaultSources().map(s => s.id))
+      const unknown = sourceIds.filter(id => !allDefaultIds.has(id))
+      if (unknown.length > 0) {
+        console.log(chalk.yellow(`⚠ 未知信息源 ID: ${unknown.join(', ')}`))
+        console.log(chalk.gray('运行 reado sources list 查看所有可用 ID'))
+      }
+    } else if (opts.bundle) {
+      // Use bundle sources (allowDisabled: true for explicit bundle selection)
+      const bundleSourceIds = getBundleSourceIds(opts.bundle)
+      if (bundleSourceIds.length === 0) {
+        const available = getBundles().map(b => `  ${b.emoji} ${b.id.padEnd(12)} ${b.nameZh} / ${b.name}`).join('\n')
+        console.log(chalk.red(`未找到主题包: ${opts.bundle}`))
+        console.log(chalk.gray('可用主题包:\n' + available))
+        return
+      }
+      sourceIds = bundleSourceIds
+      explicitSource = true  // allow disabled sources in bundle
+    } else if (categories.length > 0) {
+      // 按板块名过滤
+      sourceIds = getSourceIdsForCategories(config, categories)
+      if (sourceIds.length === 0) {
+        console.log(chalk.yellow('未找到匹配的信息源。'))
+        console.log(chalk.gray('可用板块:'))
+        for (const name of Object.keys(config.categories)) {
+          console.log(chalk.gray(`  - ${name}`))
+        }
+        return
+      }
+    } else {
+      // 什么都没指定 → 交互式选择（仅展示支持关键词搜索的源）
+      const allSources = getDefaultSources()
+      const result = await promptSearchSourceSelection(allSources)
+      if (result.cancelled) {
+        console.log(chalk.gray('已取消。'))
+        return
+      }
+      sourceIds = result.sourceIds
+      explicitSource = true  // 允许 enabled:false 的可搜索源
+    }
+
+    sources = resolveSourceConfigs(sourceIds, explicitSource, overrides)
+    if (sources.length === 0) {
+      console.log(chalk.yellow('所有信息源均已禁用或未定义。'))
+      return
+    }
   }
 
   // 开始采集
@@ -194,7 +203,9 @@ export async function runSearch(categories: string[], opts: FetchCommandOptions)
       }
       // 同时在终端显示简要统计
       const s = result.stats
-      console.log(chalk.gray(`📊 信息源: ${s.totalSources} | 成功: ${s.successSources} | 条目: ${s.totalItems}`))
+      const dedupNote = s.deduplicatedItems > 0 ? ` | 去重: ${s.deduplicatedItems}` : ''
+      const limitNote = !opts.limit ? chalk.gray(' (全量，用 --limit 限制)') : ''
+      console.log(chalk.gray(`📊 信息源: ${s.totalSources} | 成功: ${s.successSources} | 条目: ${s.totalItems}${dedupNote}`) + limitNote)
     } else {
       const output = formatOutput(result, format)
       console.log(output)

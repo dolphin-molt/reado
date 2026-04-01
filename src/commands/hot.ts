@@ -3,6 +3,7 @@ import chalk from 'chalk'
 import { loadConfig, configExists, initConfig, resolveSourceConfigs } from '../core/config.js'
 import { fetchAll } from '../core/engine.js'
 import { formatOutput, exportHTML } from '../output/index.js'
+import { resolveTopics } from '../core/topics.js'
 import type { OutputFormat } from '../core/types.js'
 
 /** 热榜源分组定义 */
@@ -45,6 +46,7 @@ interface HotCommandOptions {
   output?: string
   noCache?: boolean
   cache?: boolean
+  topics?: string
 }
 
 export async function runHot(platform: string | undefined, opts: HotCommandOptions): Promise<void> {
@@ -93,13 +95,16 @@ export async function runHot(platform: string | undefined, opts: HotCommandOptio
     color: 'cyan',
   }).start()
 
+  // 用户显式传 --topics 才过滤，否则热榜全量展示
+  const keywords = opts.topics !== undefined ? resolveTopics(opts.topics) : []
+
   try {
     const result = await fetchAll(sources, {
       concurrency,
       cacheTTL: config.defaults.cacheTTL,
       noCache,
       maxItems: 0,          // 不在引擎层截断，按源分组后再截断
-      keywords: [],         // 热榜不做任何关键词过滤，强制全量
+      keywords,
       globalTopics: undefined,
       sourceTopics: undefined,
     })

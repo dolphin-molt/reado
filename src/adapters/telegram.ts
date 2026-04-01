@@ -1,6 +1,7 @@
 import { SourceAdapter } from './base.js'
 import { parseRSSFeed } from '../parsers/rss-parser.js'
 import { httpGet } from '../utils/http.js'
+import { logger } from '../utils/logger.js'
 import type { InfoItem, SourceConfig } from '../core/types.js'
 
 /**
@@ -29,7 +30,7 @@ export class TelegramAdapter extends SourceAdapter {
   async fetch(source: SourceConfig): Promise<InfoItem[]> {
     const channelId = extractChannelId(source.url)
     if (!channelId) {
-      console.warn(`[telegram] 无法解析频道 ID: ${source.url}`)
+      logger.warn(`[telegram] 无法解析频道 ID: ${source.url}`)
       return []
     }
 
@@ -38,7 +39,7 @@ export class TelegramAdapter extends SourceAdapter {
       const xml = await httpGet(rssUrl)
       return parseRSSFeed(xml, source.name, source.id)
     } catch {
-      console.warn(`[telegram] @${channelId} 采集失败（tgstat.ru 不可用），跳过`)
+      logger.warn(`[telegram] @${channelId} 采集失败（tgstat.ru 不可用），跳过`)
       return []
     }
   }

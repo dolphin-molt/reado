@@ -3,6 +3,7 @@ import { join } from 'node:path'
 import { homedir } from 'node:os'
 import { UserConfigSchema, type UserConfig, type SourceConfig } from './types.js'
 import { ConfigError } from '../utils/errors.js'
+import { logger } from '../utils/logger.js'
 import defaultSourcesData from '../../config/default-sources.json' with { type: 'json' }
 
 const CONFIG_DIR = join(homedir(), '.reado')
@@ -76,7 +77,8 @@ export function loadConfig(): UserConfig {
     }
 
     // 迁移 3：老用户没有 globalTopics 时，补上预设 AI 词表
-    if (config.globalTopics === undefined) {
+    // 使用 'globalTopics' in data 区分"从未设置"和"用户主动清除"
+    if (!('globalTopics' in data)) {
       config.globalTopics = [
         'AI', '人工智能', '大模型', 'LLM', 'AGI', '智能体', 'Agent',
         'Transformer', 'RAG', '多模态', '推理', '微调', '具身',
@@ -112,7 +114,10 @@ export function loadConfig(): UserConfig {
       }
     }
 
-    if (migrated) saveConfig(config)
+    if (migrated) {
+      logger.debug('配置已自动迁移并保存')
+      saveConfig(config)
+    }
 
     return config
   } catch (e) {

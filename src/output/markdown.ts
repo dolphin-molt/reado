@@ -25,7 +25,8 @@ export function formatMarkdown(result: AggregateResult): string {
       const time = item.publishedAt
         ? item.publishedAt.toLocaleString('zh-CN', { hour: '2-digit', minute: '2-digit' })
         : ''
-      lines.push(`| [${item.title}](${item.url}) | ${time} |`)
+      const titleCell = item.url ? `[${item.title}](${item.url})` : item.title
+      lines.push(`| ${titleCell} | ${time} |`)
     }
     lines.push('')
   }

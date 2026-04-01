@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { homedir } from 'node:os'
+import { logger } from './logger.js'
 
 const CACHE_DIR = join(homedir(), '.reado', 'cache')
 
@@ -10,9 +11,15 @@ interface CacheEntry<T> {
   etag?: string
 }
 
-function ensureCacheDir(): void {
-  if (!existsSync(CACHE_DIR)) {
-    mkdirSync(CACHE_DIR, { recursive: true })
+function ensureCacheDir(): boolean {
+  try {
+    if (!existsSync(CACHE_DIR)) {
+      mkdirSync(CACHE_DIR, { recursive: true })
+    }
+    return true
+  } catch (e) {
+    logger.warn(`无法创建缓存目录 ${CACHE_DIR}: ${e instanceof Error ? e.message : e}`)
+    return false
   }
 }
 
@@ -36,11 +43,16 @@ export function getCached<T>(key: string, ttlMinutes: number): T | null {
 }
 
 export function setCache<T>(key: string, data: T, etag?: string): void {
-  ensureCacheDir()
+  if (!ensureCacheDir()) return
+
   const entry: CacheEntry<T> = {
     data,
     fetchedAt: Date.now(),
     etag,
   }
-  writeFileSync(cacheFilePath(key), JSON.stringify(entry), 'utf-8')
+  try {
+    writeFileSync(cacheFilePath(key), JSON.stringify(entry), 'utf-8')
+  } catch (e) {
+    logger.warn(`缓存写入失败 [${key}]: ${e instanceof Error ? e.message : e}`)
+  }
 }

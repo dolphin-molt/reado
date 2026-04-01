@@ -6,6 +6,9 @@ import { getCached, setCache } from '../utils/cache.js'
 import { logger } from '../utils/logger.js'
 import type { SourceConfig, InfoItem, FetchResult, AggregateResult } from './types.js'
 
+/** Browser/cookie 策略的源并发上限，防止 WebSocket 排队超时 */
+const BROWSER_CONCURRENCY = 3
+
 /** 缓存 key = source.id + URL 的短 hash，URL 一变自动失效 */
 function cacheKey(source: SourceConfig): string {
   const urlHash = createHash('md5').update(source.url).digest('hex').slice(0, 8)
@@ -19,9 +22,9 @@ interface EngineOptions {
   maxItems: number
   /**
    * 关键词优先级（高 → 低）：
-   *   1. keywords    — CLI --keyword 临时覆盖
-   *   2. globalTopics — config.defaults.topics 持久化全局设置
-   *   3. sourceTopics — config.sourceTopics[source.id] 按源覆盖
+   *   1. keywords     — CLI --topics / --keyword 临时覆盖
+   *   2. sourceTopics — config.sourceTopics[source.id] 按源持久覆盖
+   *   3. globalTopics — config.globalTopics 全局持久设置（仅对 source.topics 非空的源生效）
    *   4. source.topics — default-sources.json 默认值
    * undefined = 该层不生效，继续往下找
    * string[]  = 使用该词表（空数组 = 不过滤）
@@ -38,7 +41,7 @@ export async function fetchAll(
   // cookie/browser 策略的源（opencli Bridge 是单 WebSocket，并行会排队超时）
   // 单独用低并发限制，其余源走正常并发
   const normalLimit = pLimit(opts.concurrency)
-  const browserLimit = pLimit(3)  // Bridge 同时最多 3 个，防止排队超时
+  const browserLimit = pLimit(BROWSER_CONCURRENCY)
   const fetchedAt = new Date()
 
   const promises = sources.map(source => {
@@ -62,10 +65,13 @@ export async function fetchAll(
 
   // 合并所有条目
   let allItems = results.flatMap(r => r.items)
+  const beforeDedup = allItems.length
 
   // 去重 + 排序
   allItems = deduplicateByUrl(allItems)
   allItems = sortByTime(allItems)
+
+  const deduplicatedItems = beforeDedup - allItems.length
 
   // 截断
   if (opts.maxItems > 0) {
@@ -78,6 +84,7 @@ export async function fetchAll(
     failedSources: results.filter(r => !!r.error).length,
     cachedSources: results.filter(r => r.cached).length,
     totalItems: allItems.length,
+    deduplicatedItems,
   }
 
   return { items: allItems, results, stats, fetchedAt }
@@ -125,12 +132,13 @@ async function fetchSource(
     // 时间过滤
     items = filterByTime(items, source.hours)
 
-    // 主题过滤优先级: CLI --keyword > sourceTopics[id] > globalTopics > source.topics
-    // 注意: source.topics === [] 表示"该源无需过滤（纯 AI 源）"，globalTopics 不覆盖它
+    // 主题过滤优先级: CLI --topics > sourceTopics[id] > globalTopics > source.topics
+    // source.topics === [] 代表"纯 AI 源，无需过滤"，globalTopics 不覆盖它，
+    // 避免把全局词表错误地应用到本来就该全量展示的源。
     const sourceHasFilter = source.topics.length > 0
     const effectiveTopics =
-      opts.keywords !== undefined                       ? opts.keywords :
-      opts.sourceTopics?.[source.id] !== undefined      ? opts.sourceTopics[source.id] :
+      opts.keywords !== undefined                          ? opts.keywords :
+      opts.sourceTopics?.[source.id] !== undefined         ? opts.sourceTopics[source.id] :
       (opts.globalTopics !== undefined && sourceHasFilter) ? opts.globalTopics :
       source.topics
     items = filterByTopics(items, effectiveTopics)
