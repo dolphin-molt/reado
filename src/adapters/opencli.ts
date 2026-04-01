@@ -115,7 +115,8 @@ export class OpenCLIAdapter extends SourceAdapter {
 
     const binPath = await this.resolveOpenCLI()
     const args = [...cmd, '-f', 'json']
-    const cmdStr = [binPath, ...args].join(' ')
+    // 包含空格的参数需要加引号，避免 shell 拆分
+    const cmdStr = [binPath, ...args.map(a => a.includes(' ') ? `'${a}'` : a)].join(' ')
 
     try {
       const { stdout } = await execAsync(cmdStr, {
