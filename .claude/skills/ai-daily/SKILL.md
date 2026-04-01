@@ -114,75 +114,25 @@ Twitter 监控账号列表见 `reference/twitter-accounts.md`。
 
 ### Step 3: AI Summarization
 
-使用采集到的 JSON 数据生成结构化报告，要求：
+使用采集到的 JSON 数据，按 `prompts/` 目录中的 prompt 文件生成结构化报告：
 
-1. **去重** — 同一新闻来自多个源时只保留一条，注明最佳来源
-2. **分类** — 按下方模板分配到对应板块
-3. **摘要** — 每条一行摘要（中文 ≤50 字 / 英文 ≤20 词）
-4. **Top 5** — 跨所有板块选出 5 条最有影响力的新闻
+- `prompts/summarize-news.md` — 新闻/公司动态的摘要规则
+- `prompts/summarize-tweets.md` — Twitter 推文的摘要规则
+- `prompts/summarize-opensource.md` — 开源项目/论文的摘要规则
+- `prompts/digest-intro.md` — 日报整体组装规则和格式要求
+
+**核心要求：每条内容必须有四个要素——来源、标题、事件描述（100-200字）、跳转链接。**
+
+处理流程：
+1. **去重** — 同一新闻来自多个源时只保留一条，选信息最丰富的源
+2. **分类** — 按 `reference/data-sources.md` 中的映射表分配板块
+3. **摘要** — 按对应 prompt 生成摘要（新闻/推文/开源各有不同规则）
+4. **组装** — 按 `prompts/digest-intro.md` 组装最终报告
 5. **语言** — 按 config 中的语言设置输出
 
 ### Step 4: Output
 
-**报告模板：**
-
-```markdown
-# AI Daily Report · YYYY-MM-DD
-
-> Collected at HH:MM | Sources: X | Items: X
-
----
-
-## 重大新闻 / Breaking News
-
-重大发布、产品上线、融资消息。
-
-- **标题** — 一句话摘要 [→](url)
-
-## 公司动态 / Company Updates
-
-OpenAI、Anthropic、Google、Meta 等公司新闻。
-
-- **标题** — 一句话摘要 [→](url)
-
-## Twitter 精选 / Twitter Highlights
-
-AI 领袖和研究者的重要推文。
-
-- **@username**: 推文要点 [→](url)
-
-## 论文与开源 / Papers & Open Source
-
-arXiv 论文、HuggingFace 发布、GitHub 趋势项目。
-
-- **项目/论文名** — 一句话摘要 [→](url)
-
-## 社区热点 / Community & Discussion
-
-HN 讨论、Reddit 帖子、社区动态。
-
-- **标题** — 一句话摘要 [→](url)
-
----
-
-## Top 5 Picks
-
-1. **标题** [→](url)
-   > 为什么重要：一句话
-
-...
-
----
-
-## 采集统计
-
-| 指标 | 数值 |
-|------|------|
-| 信息源总数 | X |
-| 成功采集 | X |
-| 条目总数 | X |
-| 去重后 | X |
-```
+报告格式和组装规则详见 `prompts/digest-intro.md`。
 
 **输出处理：**
 - 始终在终端打印完整报告
