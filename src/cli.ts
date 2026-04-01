@@ -423,21 +423,23 @@ export function createCLI(): Command {
       .description('Twitter 时间线 (不传则用监控清单，清单为空用预设账号)')
       .option('--topics <topics>', '话题过滤')
   ).action(async (users: string[], opts) => {
+    const { parseHours } = await import('./utils/time.js')
+    const hours = opts.hours ? parseHours(opts.hours) : 24
+
     if (users && users.length > 0) {
       // 临时查看指定用户，直接构造 SourceConfig
-      const configs = watchlistToSourceConfigs(users.map(u => u.replace(/^@/, '').toLowerCase()))
-      await runSearch([], { ...opts, sourcesOverride: configs, keyword: opts.topics ? [opts.topics] : undefined })
+      const configs = watchlistToSourceConfigs(users.map(u => u.replace(/^@/, '').toLowerCase()), hours)
+      await runSearch([], { ...opts, sourcesOverride: configs })
     } else {
       // 优先用监控清单，清单为空则降级到默认5人
       const watchlist = loadWatchlist()
       if (watchlist.length > 0) {
-        const configs = watchlistToSourceConfigs(watchlist)
-        await runSearch([], { ...opts, sourcesOverride: configs, keyword: opts.topics ? [opts.topics] : undefined })
+        const configs = watchlistToSourceConfigs(watchlist, hours)
+        await runSearch([], { ...opts, sourcesOverride: configs })
       } else {
         await runSearch([], {
           ...opts,
           source: ['tw-karpathy', 'tw-ylecun', 'tw-sama', 'tw-swyx', 'tw-drjimfan'],
-          keyword: opts.topics ? [opts.topics] : undefined,
         })
       }
     }

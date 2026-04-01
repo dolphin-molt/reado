@@ -64,18 +64,23 @@ export function removeFromWatchlist(username: string): { removed: boolean; norma
 
 /**
  * 将用户名列表转为 SourceConfig 数组，用于直接传给 fetchAll。
- * 使用 opencli twitter search "from:username" 获取用户发言（需本地浏览器登录 Twitter）。
+ * 使用 opencli twitter search "from:username since:date" 获取用户发言。
+ *
+ * @param hours 时间窗口（小时），自动计算 since 日期拼入搜索词
  */
-export function watchlistToSourceConfigs(usernames: string[]): SourceConfig[] {
+export function watchlistToSourceConfigs(usernames: string[], hours = 24): SourceConfig[] {
+  const sinceDate = new Date(Date.now() - hours * 60 * 60 * 1000)
+  const since = sinceDate.toISOString().slice(0, 10) // YYYY-MM-DD
+
   return usernames.map(name => ({
     id: `tw-${name}`,
     name: `@${name}`,
     adapter: 'opencli' as const,
     url: `https://x.com/${name}`,
-    hours: 24,
+    hours,
     topics: [],
     enabled: true,
     strategy: 'cookie' as const,
-    command: ['twitter', 'search', `from:${name}`, '--limit', '20'],
+    command: ['twitter', 'search', `from:${name} since:${since}`, '--limit', '20'],
   }))
 }
