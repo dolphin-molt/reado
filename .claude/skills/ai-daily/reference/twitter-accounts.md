@@ -84,12 +84,16 @@ reado twitter timeline karpathy    # 采集指定用户
 | @petergyang | Peter Yang | Product, AI |
 | @ryolu_ | Ryo Lu | Cursor |
 
-### Chinese AI Developers (2)
+### Chinese AI Developers & KOLs (6)
 
 | Handle | Person | Known For |
 |--------|--------|-----------|
 | @idoubicc | idoubi | ShipAny, MCP.so |
 | @dotey | 宝玉 | AI translation, AIGC community |
+| @op7418 | 歸藏 | AI 产品评测, 中文 AI 社区 KOL |
+| @geekbb | GeekBB | AI 工具资讯, 中文科技博主 |
+| @MaxForAI | Max | AI 产品体验, 中文 AI 社区 |
+| @thukeg | 唐杰 (Jie Tang) | CTO, 智谱 AI (Zhipu/ChatGLM) |
 
 ### VCs & Investors (6)
 
