@@ -14,7 +14,7 @@ reado twitter timeline karpathy    # 采集指定用户
 
 ## Account Categories
 
-### AI Companies Official (13)
+### AI Companies Official (14)
 
 | Handle | Organization |
 |--------|-------------|
@@ -31,6 +31,7 @@ reado twitter timeline karpathy    # 采集指定用户
 | @huggingface | Hugging Face |
 | @MetaAI | Meta AI |
 | @claudeai | Claude |
+| @Zai_org | 智谱 AI (Z AI / ChatGLM) |
 
 ### Founders & CEOs (12)
 
