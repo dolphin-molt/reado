@@ -1,4 +1,4 @@
-# Twitter Watchlist — AI Accounts
+# Twitter Watchlist — AI Accounts (81 人)
 
 实际清单文件：`~/.reado/twitter-watchlist.txt`
 
@@ -14,7 +14,7 @@ reado twitter timeline karpathy    # 采集指定用户
 
 ## Account Categories
 
-### AI Companies & Products (17)
+### 海外 AI 公司官方 (12)
 
 | Handle | Organization |
 |--------|-------------|
@@ -26,14 +26,33 @@ reado twitter timeline karpathy    # 采集指定用户
 | @GeminiApp | Gemini |
 | @GoogleCloud | Google Cloud |
 | @GoogleLabs | Google Labs |
-| @xai | xAI |
-| @deepseek_ai | DeepSeek |
+| @xai | xAI / Grok |
 | @MistralAI | Mistral AI |
 | @huggingface | Hugging Face |
 | @MetaAI | Meta AI |
+
+### 中国 AI 公司官方 (8)
+
+| Handle | Organization |
+|--------|-------------|
+| @deepseek_ai | DeepSeek |
 | @Zai_org | 智谱 AI (Z AI / ChatGLM) |
+| @Alibaba_Qwen | 通义千问 Qwen (阿里) |
+| @Kimi_Moonshot | Kimi / 月之暗面 |
+| @TXhunyuan | 腾讯混元 |
+| @Baidu_Inc | 百度 / 文心 |
+| @MiniMax_AI | MiniMax / 海螺 |
+
+### AI 产品 & 工具 (6)
+
+| Handle | Organization |
+|--------|-------------|
 | @openclaw | OpenClaw |
 | @EvoMapAI | EvoMap — AI Agent 进化网络 |
+| @ManusAI_HQ | Manus AI |
+| @Replit | Replit |
+| @lovable_dev | Lovable — AI app builder |
+| @lovart_ai | Lovart — AI 设计 Agent |
 
 ### Founders & CEOs (12)
 
@@ -82,24 +101,32 @@ reado twitter timeline karpathy    # 采集指定用户
 | @eugeneyan | Eugene Yan | Applied AI |
 | @chipro | Chip Huyen | ML Systems |
 | @danshipper | Dan Shipper | Every, AI writing |
-| @steipete | Peter Steinberger | AI tools |
+| @steipete | Peter Steinberger | OpenClaw 创始人 |
 | @joshwoodward | Josh Woodward | Google |
 | @petergyang | Peter Yang | Product, AI |
 | @ryolu_ | Ryo Lu | Cursor |
 
-### Chinese AI Developers & KOLs (10)
+### 中文 AI 开发者 & KOL (8)
 
 | Handle | Person | Known For |
 |--------|--------|-----------|
-| @idoubicc | idoubi | ShipAny, MCP.so |
-| @dotey | 宝玉 | AI translation, AIGC community |
 | @vista8 | 向阳乔木 | AI 工具推荐, Prompt 工程, 中文 AI 顶流 |
 | @lijigang | 李继刚 | Prompt 大师, Claude Skills 创作者 |
-| @op7418 | 歸藏 | AI 产品评测, 中文 AI 社区 KOL |
-| @geekbb | GeekBB | AI 工具资讯, 中文科技博主 |
-| @MaxForAI | Max | AI 产品体验, 中文 AI 社区 |
-| @thukeg | 唐杰 (Jie Tang) | CTO, 智谱 AI (Zhipu/ChatGLM) |
+| @idoubicc | idoubi | ShipAny, MCP.so |
+| @dotey | 宝玉 | AI 翻译, AIGC 社区 |
+| @op7418 | 歸藏 | AI 产品评测 |
+| @geekbb | GeekBB | AI 工具资讯 |
+| @MaxForAI | Max | AI 产品体验 |
 | @aigclink | AIGC Link | AIGC 资讯聚合, Agent/MCP 分析 |
+
+### 科技公司 (4)
+
+| Handle | Organization |
+|--------|-------------|
+| @Xiaomi | 小米 |
+| @bilibili_en | 哔哩哔哩 |
+| @meituan | 美团 |
+| @Huawei | 华为 |
 
 ### VCs & Investors (6)
 
@@ -115,7 +142,7 @@ reado twitter timeline karpathy    # 采集指定用户
 ## Report Usage
 
 生成 Twitter Highlights 板块时：
-1. 按分类分组（Companies > Founders > Researchers > Builders）
+1. 按分类分组（Companies > Founders > Researchers > Builders > KOL）
 2. 优先高互动或突发新闻的推文
-3. 格式：`@handle: 推文要点 [→](url)`
+3. 格式参见 `prompts/summarize-tweets.md`
 4. 限制 10-15 条最重要的，避免报告过长
