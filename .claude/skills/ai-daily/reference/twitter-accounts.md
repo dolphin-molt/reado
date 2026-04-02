@@ -14,12 +14,13 @@ reado twitter timeline karpathy    # 采集指定用户
 
 ## Account Categories
 
-### AI Companies Official (14)
+### AI Companies & Products (17)
 
 | Handle | Organization |
 |--------|-------------|
 | @OpenAI | OpenAI |
 | @AnthropicAI | Anthropic |
+| @claudeai | Claude (Anthropic) |
 | @GoogleDeepMind | Google DeepMind |
 | @GoogleAI | Google AI |
 | @GeminiApp | Gemini |
@@ -30,8 +31,9 @@ reado twitter timeline karpathy    # 采集指定用户
 | @MistralAI | Mistral AI |
 | @huggingface | Hugging Face |
 | @MetaAI | Meta AI |
-| @claudeai | Claude |
 | @Zai_org | 智谱 AI (Z AI / ChatGLM) |
+| @openclaw | OpenClaw |
+| @EvoMapAI | EvoMap — AI Agent 进化网络 |
 
 ### Founders & CEOs (12)
 
@@ -85,16 +87,19 @@ reado twitter timeline karpathy    # 采集指定用户
 | @petergyang | Peter Yang | Product, AI |
 | @ryolu_ | Ryo Lu | Cursor |
 
-### Chinese AI Developers & KOLs (6)
+### Chinese AI Developers & KOLs (10)
 
 | Handle | Person | Known For |
 |--------|--------|-----------|
 | @idoubicc | idoubi | ShipAny, MCP.so |
 | @dotey | 宝玉 | AI translation, AIGC community |
+| @vista8 | 向阳乔木 | AI 工具推荐, Prompt 工程, 中文 AI 顶流 |
+| @lijigang | 李继刚 | Prompt 大师, Claude Skills 创作者 |
 | @op7418 | 歸藏 | AI 产品评测, 中文 AI 社区 KOL |
 | @geekbb | GeekBB | AI 工具资讯, 中文科技博主 |
 | @MaxForAI | Max | AI 产品体验, 中文 AI 社区 |
 | @thukeg | 唐杰 (Jie Tang) | CTO, 智谱 AI (Zhipu/ChatGLM) |
+| @aigclink | AIGC Link | AIGC 资讯聚合, Agent/MCP 分析 |
 
 ### VCs & Investors (6)
 
