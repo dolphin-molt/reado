@@ -10,13 +10,14 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    # 跳过版本提交本身，避免死循环
-    if: "!contains(github.event.head_commit.message, 'chore: release')"
+    # 跳过版本提交本身（bot 推送），避免死循环
+    if: ${{ !startsWith(github.event.head_commit.message, 'chore: release') }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
