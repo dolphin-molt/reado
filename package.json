@@ -1,6 +1,6 @@
 {
   "name": "@dolphin-molt/reado",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "信息聚合 CLI 工具 - 一站式获取 AI 资讯、科技新闻、社区热点",
   "type": "module",
   "bin": {
