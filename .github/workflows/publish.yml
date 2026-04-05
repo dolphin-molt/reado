@@ -3,6 +3,7 @@ name: Publish to npm
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -37,8 +38,17 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          npm version patch -m "chore: release v%s"
-          git push --follow-tags
+
+          CURRENT=$(node -p "require('./package.json').version")
+          PUBLISHED=$(npm view @dolphin-molt/reado version 2>/dev/null || echo "0.0.0")
+
+          if [ "$CURRENT" = "$PUBLISHED" ]; then
+            echo "Current version $CURRENT already published, bumping..."
+            npm version patch -m "chore: release v%s"
+            git push --follow-tags
+          else
+            echo "Current version $CURRENT not yet published, using as-is"
+          fi
 
       - name: Publish to npm
         run: npm publish --access public
