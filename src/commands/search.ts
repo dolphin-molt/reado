@@ -205,7 +205,8 @@ export async function runSearch(categories: string[], opts: FetchCommandOptions)
       const s = result.stats
       const dedupNote = s.deduplicatedItems > 0 ? ` | 去重: ${s.deduplicatedItems}` : ''
       const limitNote = !opts.limit ? chalk.gray(' (全量，用 --limit 限制)') : ''
-      console.log(chalk.gray(`📊 信息源: ${s.totalSources} | 成功: ${s.successSources} | 条目: ${s.totalItems}${dedupNote}`) + limitNote)
+      const emptyNote = s.emptySourceIds?.length ? chalk.yellow(` | 空源: ${s.emptySourceIds.length}`) : ''
+      console.log(chalk.gray(`📊 信息源: ${s.totalSources} | 有数据: ${s.contributingSources} | 失败: ${s.failedSources} | 条目: ${s.totalItems}${dedupNote}`) + emptyNote + limitNote)
     } else {
       const output = formatOutput(result, format)
       console.log(output)

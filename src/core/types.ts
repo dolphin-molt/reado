@@ -108,6 +108,12 @@ export interface AggregateResult {
     successSources: number
     failedSources: number
     cachedSources: number
+    /** 实际贡献了条目的源数量 */
+    contributingSources: number
+    /** 成功但返回 0 条目的源 ID 列表 */
+    emptySourceIds: string[]
+    /** 失败源 ID 列表 */
+    failedSourceIds: string[]
     totalItems: number
     /** 跨源 URL 去重后移除的条目数 */
     deduplicatedItems: number

@@ -78,11 +78,21 @@ export async function fetchAll(
     allItems = allItems.slice(0, opts.maxItems)
   }
 
+  const noError = results.filter(r => !r.error)
+  const withItems = noError.filter(r => r.items.length > 0)
+  const emptyOk = noError.filter(r => r.items.length === 0)
+
   const stats = {
     totalSources: sources.length,
-    successSources: results.filter(r => !r.error).length,
+    successSources: noError.length,
     failedSources: results.filter(r => !!r.error).length,
     cachedSources: results.filter(r => r.cached).length,
+    /** 实际贡献了条目的源数量 */
+    contributingSources: withItems.length,
+    /** 成功但返回 0 条目的源 ID 列表 */
+    emptySourceIds: emptyOk.map(r => r.source.id),
+    /** 失败源 ID 列表 */
+    failedSourceIds: results.filter(r => !!r.error).map(r => r.source.id),
     totalItems: allItems.length,
     deduplicatedItems,
   }
